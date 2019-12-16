@@ -20,13 +20,14 @@
             app:layout_constraintRight_toRightOf="parent"
             android:layout_height="@dimen/dp140">
             <ImageView
+                android:contentDescription="@string/app_name"
                 android:id="@+id/iv_photo"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_launcher_background"
                 android:layout_marginTop="@dimen/len_36"
                 android:layout_marginBottom="@dimen/len_36"
-                android:layout_marginRight="@dimen/dp30"
-                android:layout_marginLeft="@dimen/len_16"
+                android:layout_marginEnd="@dimen/dp30"
+                android:layout_marginStart="@dimen/len_16"
                 android:layout_width="@dimen/len_60"
                 android:layout_height="@dimen/len_60"/>
 

@@ -14,9 +14,10 @@ import me.shihao.library.XStatusBarHelper;
 public class SettingActivity extends BaseActivity<ActivitySettingBinding> {
     @Override
     public void initData(Bundle bundle) {
-        XStatusBarHelper.forceFitsSystemWindows(context);
+        /*XStatusBarHelper.forceFitsSystemWindows(context);
         XStatusBarHelper.immersiveStatusBar(context);
-        XStatusBarHelper.setHeightAndPadding(context, getBinding().titleView);
+        XStatusBarHelper.setHeightAndPadding(context, getBinding().titleView);*/
+        initTitle(getBinding().titleView, "设置");
     }
 
     @Override
