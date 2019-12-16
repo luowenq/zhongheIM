@@ -6,21 +6,185 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.exam.fs.push.widget.TitleView
-            android:id="@+id/titleView"
+        <RelativeLayout
+            android:id="@+id/cl_bg"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/shape_title_bg"
             app:layout_constraintTop_toTopOf="parent"
-            app:left_ico_back="false"
-            app:right_text_ishow="true"
-            app:right_btn_isShow="false"
-            app:right_icon_res_ishow="true" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="@dimen/dp140">
+            <ImageView
+                android:id="@+id/iv_photo"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_marginTop="@dimen/len_36"
+                android:layout_marginBottom="@dimen/len_36"
+                android:layout_marginRight="@dimen/dp30"
+                android:layout_marginLeft="@dimen/len_16"
+                android:layout_width="@dimen/len_60"
+                android:layout_height="@dimen/len_60"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tv_nickname"
+                android:text="面包会有的面包会有的面包会有的面包会有的面包会有的"
+                android:textSize="@dimen/font_20"
+                android:textColor="@color/white"
+                android:layout_toLeftOf="@+id/iv_qr_code"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/iv_photo"
+                android:layout_marginRight="@dimen/len_20"
+                android:layout_marginTop="@dimen/len_36"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
+            <TextView
+                android:id="@+id/tv_user_ip"
+                android:textSize="@dimen/font_14"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/len_6"
+                android:text="2151515818541854854"
+                android:layout_toRightOf="@+id/iv_photo"
+                android:layout_marginRight="@dimen/len_20"
+                android:layout_below="@+id/tv_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/iv_qr_code"
+                android:layout_marginTop="@dimen/len_40"
+                android:src="@drawable/icon_qr_code"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/len_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/iv_right_more"
+                android:src="@drawable/icon_right_white_more"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/iv_qr_code"
+                android:layout_marginTop="@dimen/len_14"
+                android:layout_marginRight="@dimen/len_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:background="@drawable/icon_yinying"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/len_8"
+            android:layout_marginRight="@dimen/len_8"
+            android:layout_marginTop="@dimen/len_20"
+            android:layout_height="@dimen/len_76">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_44"
+                android:layout_marginTop="@dimen/len_12"
+                android:drawableRight="@drawable/icon_right_black_more"
+                android:paddingRight="@dimen/len_20"
+                android:drawablePadding="@dimen/len_10"
+                android:textSize="16sp"
+                android:textColor="@color/color_666666"
+                android:drawableLeft="@drawable/icon_pay"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/len_20"
+                android:text="支付" />
+        </RelativeLayout>
+        <LinearLayout
+            android:background="@drawable/icon_yinying_big"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/len_8"
+            android:layout_marginRight="@dimen/len_8"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_right_black_more"
+                android:paddingRight="@dimen/len_20"
+                android:layout_marginTop="@dimen/len_14"
+                android:paddingTop="@dimen/len_10"
+                android:paddingBottom="@dimen/len_10"
+                android:drawablePadding="@dimen/len_10"
+                android:textSize="16sp"
+                android:textColor="@color/color_666666"
+                android:drawableLeft="@drawable/icon_collection"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/len_20"
+                android:text="收藏" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_right_black_more"
+                android:paddingRight="@dimen/len_20"
+                android:drawablePadding="@dimen/len_10"
+                android:paddingTop="@dimen/len_10"
+                android:paddingBottom="@dimen/len_10"
+                android:textSize="16sp"
+                android:textColor="@color/color_666666"
+                android:drawableLeft="@drawable/icon_pics"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/len_20"
+                android:text="相册" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_right_black_more"
+                android:paddingRight="@dimen/len_20"
+                android:drawablePadding="@dimen/len_10"
+                android:paddingTop="@dimen/len_10"
+                android:paddingBottom="@dimen/len_10"
+                android:textSize="16sp"
+                android:textColor="@color/color_666666"
+                android:drawableLeft="@drawable/icon_biaoqing"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/len_20"
+                android:text="表情" />
+
+            <TextView
+                android:id="@+id/btn_setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/icon_right_black_more"
+                android:paddingRight="@dimen/len_20"
+                android:drawablePadding="@dimen/len_10"
+                android:paddingTop="@dimen/len_10"
+                android:paddingBottom="@dimen/len_10"
+                android:textSize="16sp"
+                android:layout_marginBottom="@dimen/len_28"
+                android:textColor="@color/color_666666"
+                android:drawableLeft="@drawable/icon_setting"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/len_20"
+                android:text="设置" />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_marginLeft="@dimen/len_8"
+            android:layout_marginRight="@dimen/len_8"
+            android:background="@drawable/icon_yinying"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_76">
+            <TextView
+                android:id="@+id/btn_login_out"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_44"
+                android:layout_marginTop="@dimen/len_12"
+                android:drawableRight="@drawable/icon_right_black_more"
+                android:paddingRight="@dimen/len_20"
+                android:drawablePadding="@dimen/len_10"
+                android:textSize="16sp"
+                android:textColor="@color/color_e91818"
+                android:drawableLeft="@drawable/icon_loginout"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/len_20"
+                android:text="退出登录" />
+        </RelativeLayout>
+    </LinearLayout>
 </layout>

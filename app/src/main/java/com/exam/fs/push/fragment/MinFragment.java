@@ -8,9 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.exam.fs.push.R;
 import com.exam.fs.push.base.BaseFragment;
 import com.exam.fs.push.databinding.FragmentMinBinding;
+
+import cn.droidlover.xdroidbase.kit.Kits;
+import me.shihao.library.XStatusBarHelper;
 
 /**
  * 我的
@@ -31,7 +37,15 @@ public class MinFragment extends BaseFragment<FragmentMinBinding> {
 
     @Override
     public void initData(Bundle bundle) {
-        initTitle(getBinding().titleView, "我的");
+        XStatusBarHelper.forceFitsSystemWindows(context);
+        XStatusBarHelper.immersiveStatusBar(context);
+        XStatusBarHelper.setHeightAndPadding(context, getBinding().clBg);
+        Glide.with(this).load("https://manhua.qpic.cn/vertical/0/07_22_36_afe651da2ab940d0e257a1ec894bd992_1504795010150.jpg/420")
+                .apply(RequestOptions.bitmapTransform(new RoundedCorners(Kits.Dimens.dpToPxInt(context, 4))))
+                .into(getBinding().ivPhoto);
+        getBinding().btnSetting.setOnClickListener(v -> {
+
+        });
     }
 
     @Override

@@ -9,4 +9,6 @@ public class RouterTables {
     public static final String PAGE_ACTIVITY_REGISTER = "/activity/register";
     //主界面
     public static final String PAGE_ACTIVITY_MAIN = "/activity/main";
+    //设置界面
+    public static final String PAGE_ACTIVITY_SETTING = "/activity/setting";
 }
