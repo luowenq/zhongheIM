@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">风声</string>
+    <string name="app_title">Title</string>
+    <string name="app_message" translatable="false">消息</string>
+    <string name="app_addres" translatable="false">通讯录</string>
+    <string name="app_found" translatable="false">发现</string>
+    <string name="app_min" translatable="false">我的</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

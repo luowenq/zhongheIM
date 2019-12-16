@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleView">
+
+        <attr name="color_style" format="enum">
+            <enum name="blue" value="0"/>
+            <enum name="transparent" value="1"/>
+        </attr>
+        <attr name="left_ico_back" format="boolean"/>
+        <attr name="right_text" format="string" />
+        <attr name="right_icon_res_ishow" format="boolean" />
+        <attr name="right_text_ishow" format="boolean" />
+        <attr name="right_btn_isShow" format="boolean" />
+        <attr name="right_btn_text" format="string" />
+        <attr name="right_icon_res" format="reference" />
+
+    </declare-styleable>
+</resources>

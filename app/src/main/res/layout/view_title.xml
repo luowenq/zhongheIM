@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_48"
+        android:background="@drawable/shape_title_bg">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/len_24"
+            android:layout_height="@dimen/len_24"
+            android:layout_marginStart="@dimen/len_16"
+            android:contentDescription="@string/app_name"
+            android:foreground="@drawable/ic_touch_fg"
+            android:src="@drawable/icon_img_back"
+            android:tint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UnusedAttribute" />
+
+        <TextView
+            android:id="@+id/tv_center_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_rigth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/len_16"
+            android:text="@string/app_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:foreground="@drawable/ic_touch_fg"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_rigth"
+            app:layout_constraintEnd_toEndOf="@+id/tv_rigth"
+            app:layout_constraintStart_toStartOf="@+id/tv_rigth"
+            app:layout_constraintTop_toTopOf="@+id/tv_rigth"
+            tools:ignore="UnusedAttribute" />
+
+        <Button
+            android:id="@+id/btn_button"
+            android:layout_width="@dimen/len_48"
+            android:layout_height="@dimen/len_36"
+            android:background="@drawable/sel_btn_bg_corner"
+            android:enabled="false"
+            android:includeFontPadding="false"
+            android:padding="0dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_14"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_rigth"
+            app:layout_constraintEnd_toEndOf="@+id/tv_rigth"
+            app:layout_constraintStart_toStartOf="@+id/tv_rigth"
+            app:layout_constraintTop_toTopOf="@+id/tv_rigth" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

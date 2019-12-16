@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 兼容8.0以上就不固定屏幕方向 -->
+    <style name="AppTheme.Translucent.Portrait">
+        <item name="android:screenOrientation">unspecified</item>
+    </style>
+</resources>
