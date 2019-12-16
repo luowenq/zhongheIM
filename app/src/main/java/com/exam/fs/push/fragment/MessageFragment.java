@@ -36,11 +36,9 @@ public class MessageFragment extends BaseFragment<FragmentMessageBinding> {
 
     @Override
     protected void stop() {
-
     }
 
     @Override
     protected void lazyLoad() {
-
     }
 }

@@ -10,6 +10,58 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.shizhefei.view.indicator.ScrollIndicatorView
+            android:id="@+id/indicatorView"
+            android:layout_width="@dimen/len_56"
+            android:layout_height="@dimen/len_4"
+            android:layout_marginBottom="@dimen/len_72"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_jump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/len_32"
+            android:layout_marginEnd="@dimen/len_16"
+            android:alpha="0.5"
+            android:background="@drawable/shape_coner_black_bg"
+            android:paddingStart="@dimen/len_8"
+            android:paddingTop="@dimen/len_4"
+            android:paddingEnd="@dimen/len_8"
+            android:paddingBottom="@dimen/len_4"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_14"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="@dimen/len_116"
+            android:layout_height="@dimen/len_44"
+            android:background="@drawable/sel_btn_next_bg"
+            android:gravity="center"
+            android:text="@string/app_btn_now"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_14"
+            android:alpha="0"
+            app:layout_constraintBottom_toBottomOf="@id/indicatorView"
+            app:layout_constraintEnd_toEndOf="@id/indicatorView"
+            app:layout_constraintStart_toStartOf="@id/indicatorView"
+            app:layout_constraintTop_toTopOf="@id/indicatorView" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
