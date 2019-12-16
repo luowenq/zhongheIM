@@ -4,10 +4,6 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.exam.fs.push.R;
 import com.exam.fs.push.base.BaseFragment;
 import com.exam.fs.push.databinding.FragmentMessageBinding;
@@ -17,7 +13,6 @@ import com.exam.fs.push.databinding.FragmentMessageBinding;
  * A simple {@link Fragment} subclass.
  */
 public class MessageFragment extends BaseFragment<FragmentMessageBinding> {
-
 
     public MessageFragment() {
     }
