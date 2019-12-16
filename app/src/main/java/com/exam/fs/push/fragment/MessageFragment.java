@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import com.exam.fs.push.R;
 import com.exam.fs.push.base.BaseFragment;
 import com.exam.fs.push.databinding.FragmentMessageBinding;
+import com.exam.fs.push.dialog.AddDialog;
 
 /**
  * 消息
@@ -27,6 +28,13 @@ public class MessageFragment extends BaseFragment<FragmentMessageBinding> {
     @Override
     public void initData(Bundle bundle) {
         initTitle(getBinding().titleView, "消息");
+        getBinding().titleView.setRightBtnRes(R.drawable.icon_add_friendy, v -> {
+            AddDialog dialog = new AddDialog(context);
+            dialog.setOnItemsClickListener(text -> {
+
+            });
+            dialog.show();
+        });
     }
 
     @Override

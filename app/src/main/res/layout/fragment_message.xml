@@ -17,7 +17,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:left_ico_back="false"
-            app:right_text_ishow="true"
+            app:right_text_ishow="false"
             app:right_btn_isShow="false"
             app:right_icon_res_ishow="true" />
 

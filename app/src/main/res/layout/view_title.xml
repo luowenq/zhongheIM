@@ -53,13 +53,14 @@
 
         <ImageView
             android:id="@+id/iv_right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/len_24"
+            android:layout_height="@dimen/len_24"
             android:contentDescription="@string/app_name"
             android:foreground="@drawable/ic_touch_fg"
             app:layout_constraintBottom_toBottomOf="@+id/tv_rigth"
-            app:layout_constraintEnd_toEndOf="@+id/tv_rigth"
-            app:layout_constraintStart_toStartOf="@+id/tv_rigth"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/len_16"
+            android:padding="@dimen/len_2"
             app:layout_constraintTop_toTopOf="@+id/tv_rigth"
             tools:ignore="UnusedAttribute" />
 
@@ -74,8 +75,8 @@
             android:textColor="@color/white"
             android:textSize="@dimen/font_14"
             app:layout_constraintBottom_toBottomOf="@+id/tv_rigth"
-            app:layout_constraintEnd_toEndOf="@+id/tv_rigth"
-            app:layout_constraintStart_toStartOf="@+id/tv_rigth"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/len_16"
             app:layout_constraintTop_toTopOf="@+id/tv_rigth" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,9 @@
     <string name="app_min" translatable="false">我的</string>
     <string name="app_btn_now" translatable="false">立即体验</string>
     <string name="app_jump">%d跳过</string>
+    <string name="app_send_group">发起群聊</string>
+    <string name="app_add_friendy">添加好友</string>
+    <string name="app_saoyisao">扫一扫！</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

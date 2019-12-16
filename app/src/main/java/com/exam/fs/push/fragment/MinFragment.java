@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.exam.fs.push.R;
 import com.exam.fs.push.base.BaseFragment;
 import com.exam.fs.push.databinding.FragmentMinBinding;
+import com.exam.fs.push.router.RouterTables;
 
 import cn.droidlover.xdroidbase.kit.Kits;
 import me.shihao.library.XStatusBarHelper;
@@ -44,7 +46,7 @@ public class MinFragment extends BaseFragment<FragmentMinBinding> {
                 .apply(RequestOptions.bitmapTransform(new RoundedCorners(Kits.Dimens.dpToPxInt(context, 4))))
                 .into(getBinding().ivPhoto);
         getBinding().btnSetting.setOnClickListener(v -> {
-
+            ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_SETTING).navigation();
         });
     }
 
