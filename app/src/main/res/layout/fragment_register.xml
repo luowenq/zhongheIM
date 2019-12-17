@@ -1,14 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.exam.fs.push.viewmodel.RegisterViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white">
+        android:layout_height="match_parent">
+
+        <!--suppress AndroidUnknownAttribute -->
+        <EditText
+            android:id="@+id/ed_phone"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/len_48"
+            android:layout_marginStart="@dimen/len_24"
+            android:layout_marginTop="@dimen/len_24"
+            android:layout_marginEnd="@dimen/len_24"
+            android:background="@drawable/icon_radios_bg"
+            android:drawableStart="@drawable/icon_account_bg"
+            android:drawablePadding="@dimen/len_20"
+            android:gravity="center_vertical"
+            android:hint="@string/app_phone"
+            android:maxLength="@{viewModel.phoneMaxLength}"
+            android:inputType="phone"
+            android:onTextChanged="@{viewModel::onPhoneTextChanged}"
+            android:paddingStart="@dimen/len_24"
+            android:paddingEnd="0dp"
+            android:text="@{viewModel.phoneText}"
+            android:textColorHint="@color/grey_400"
+            android:textSize="@dimen/font_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="Autofill" />
+
+        <!--suppress AndroidUnknownAttribute -->
+        <EditText
+            android:id="@+id/ed_varly"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/len_48"
+            android:layout_marginStart="@dimen/len_24"
+            android:layout_marginTop="@dimen/len_20"
+            android:layout_marginEnd="@dimen/len_24"
+            android:background="@drawable/icon_radios_bg"
+            android:drawableStart="@drawable/icon_pwd_bg"
+            android:drawablePadding="@dimen/len_20"
+            android:gravity="center_vertical"
+            android:hint="@string/app_varly"
+            android:maxLength="@{viewModel.codeMaxLength}"
+            android:inputType="number"
+            android:onTextChanged="@{viewModel::onVarlyTextChanged}"
+            android:paddingStart="@dimen/len_24"
+            android:paddingEnd="0dp"
+            android:text="@{viewModel.varlyText}"
+            android:textColorHint="@color/grey_400"
+            android:textSize="@dimen/font_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_phone"
+            tools:ignore="Autofill" />
+
+        <Button
+            android:layout_width="@dimen/len_80"
+            android:layout_height="@dimen/len_32"
+            android:layout_marginEnd="@dimen/len_16"
+            android:background="@drawable/shape_radios_16dp_bg"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:enabled="@{viewModel.codeEnable}"
+            android:onClick="@{viewModel::onGetVarlyClick}"
+            android:padding="0dp"
+            android:text="@{viewModel.getVarlyText}"
+            android:textColor="@color/blue_500"
+            android:textSize="@dimen/font_12"
+            app:layout_constraintBottom_toBottomOf="@+id/ed_varly"
+            app:layout_constraintEnd_toEndOf="@+id/ed_varly"
+            app:layout_constraintTop_toTopOf="@+id/ed_varly" />
+
+        <!--suppress AndroidUnknownAttribute -->
+        <EditText
+            android:id="@+id/ed_pwd"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/len_48"
+            android:layout_marginStart="@dimen/len_24"
+            android:layout_marginTop="@dimen/len_20"
+            android:layout_marginEnd="@dimen/len_24"
+            android:background="@drawable/icon_radios_bg"
+            android:drawableStart="@drawable/icon_pwd_bg"
+            android:drawablePadding="@dimen/len_20"
+            android:gravity="center_vertical"
+            android:hint="@string/app_pwd"
+            android:maxLength="@{viewModel.pwdMaxLength}"
+            android:inputType="textPassword"
+            android:onTextChanged="@{viewModel::onPwdTextChanged}"
+            android:paddingStart="@dimen/len_24"
+            android:paddingEnd="0dp"
+            android:text="@{viewModel.passwordText}"
+            android:textColorHint="@color/grey_400"
+            android:textSize="@dimen/font_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_varly"
+            tools:ignore="Autofill" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/len_48"
+            android:layout_marginTop="@dimen/len_60"
+            android:background="@drawable/shape_radios_32dp_bg"
+            android:gravity="center"
+            android:onClick="@{viewModel::onReisterClick}"
+            android:text="@{viewModel.registerText}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/ed_pwd"
+            app:layout_constraintStart_toStartOf="@+id/ed_pwd"
+            app:layout_constraintTop_toBottomOf="@+id/ed_pwd" />
+
+        <!--suppress AndroidUnknownAttribute -->
+        <CheckBox
+            android:id="@+id/cb_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/len_16"
+            android:drawablePadding="@dimen/len_24"
+            android:text="@{viewModel.greateText}"
+            android:textColor="@color/grey_500"
+            android:textSize="@dimen/font_14"
+            android:checked="true"
+            android:foreground="@drawable/ic_touch_bg"
+            android:padding="@dimen/len_2"
+            android:button="@drawable/sel_regs_ckb_bg"
+            android:onCheckedChanged="@{viewModel::onCheckedChanged}"
+            app:layout_constraintStart_toStartOf="@+id/btn_register"
+            app:layout_constraintEnd_toEndOf="@+id/tv_xy"
+            app:layout_constraintTop_toBottomOf="@+id/btn_register"
+            tools:ignore="UnusedAttribute" />
+
+        <TextView
+            android:id="@+id/tv_xy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blue_500"
+            android:text="@{viewModel.xyText}"
+            android:textSize="@dimen/font_14"
+            android:onClick="@{viewModel::onXYClick}"
+            app:layout_constraintEnd_toEndOf="@+id/btn_register"
+            app:layout_constraintTop_toTopOf="@+id/cb_box"
+            app:layout_constraintBottom_toBottomOf="@+id/cb_box"
+            app:layout_constraintStart_toStartOf="@+id/cb_box"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

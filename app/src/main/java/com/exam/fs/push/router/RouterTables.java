@@ -7,6 +7,10 @@ public class RouterTables {
     public static final String PAGE_ACTIVITY_LOGIN = "/activity/login";
     //注册
     public static final String PAGE_ACTIVITY_REGISTER = "/activity/register";
+    //忘记密码
+    public static final String PAGE_ACTIVITY_FORGET_PWD = "/activity/forget/pwd";
+    //重置密码
+    public static final String PAGE_ACTIVITY_RETREN_PWD = "/activity/retren/pwd";
     //主界面
     public static final String PAGE_ACTIVITY_MAIN = "/activity/main";
     //设置界面

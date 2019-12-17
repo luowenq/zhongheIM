@@ -84,7 +84,7 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
     }
 
     private void jump() {
-        ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_MAIN).navigation(context, new NavigationCallback() {
+        ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_LOGIN).navigation(context, new NavigationCallback() {
             @Override
             public void onFound(Postcard postcard) {
             }

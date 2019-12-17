@@ -6,8 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!-- SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- SDCard中创建与删除文件权限 -->
     <uses-permission
         android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
         tools:ignore="ProtectedPermissions" />
@@ -55,26 +54,42 @@
         <activity
             android:name=".activity.SettingActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.AccountSafeActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.BindPhoneActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.UpdatePhoneActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.UpdatePwdActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.MessageNoticeActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.QuietHoursActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.ChatSetActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.ChatBgSetActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.ExpressionManagerActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.PrivacyActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.RetrenPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ForgetPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AccountSafeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BindPhoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UpdatePhoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UpdatePwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MessageNoticeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.QuietHoursActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChatSetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChatBgSetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ExpressionManagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PrivacyActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import com.exam.fs.push.R;
 import com.exam.fs.push.base.BaseFragment;
 import com.exam.fs.push.databinding.FragmentRegisterBinding;
+import com.exam.fs.push.viewmodel.RegisterViewModel;
 
 /**
  * 注册
@@ -14,8 +15,9 @@ import com.exam.fs.push.databinding.FragmentRegisterBinding;
  */
 public class RegisterFragment extends BaseFragment<FragmentRegisterBinding> {
 
+    private RegisterViewModel viewModel;
+
     public RegisterFragment() {
-        // Required empty public constructor
     }
 
     public static RegisterFragment newInstance() {
@@ -28,6 +30,8 @@ public class RegisterFragment extends BaseFragment<FragmentRegisterBinding> {
 
     @Override
     public void initData(Bundle bundle) {
+        viewModel = new RegisterViewModel();
+        getBinding().setViewModel(viewModel);
     }
 
     @Override
@@ -41,5 +45,11 @@ public class RegisterFragment extends BaseFragment<FragmentRegisterBinding> {
 
     @Override
     protected void lazyLoad() {
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        viewModel.onDestroy();
     }
 }

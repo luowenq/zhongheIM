@@ -6,6 +6,7 @@ import okhttp3.Interceptor;
 import okhttp3.MediaType;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
 
 public class TokenGetInterceptor implements Interceptor {
     @Override
@@ -15,6 +16,6 @@ public class TokenGetInterceptor implements Interceptor {
         assert response.body() != null;
         MediaType mediaType = response.body().contentType();
         String content = response.body().string();
-        return null;
+        return response.newBuilder().body(ResponseBody.create(mediaType, content)).build();
     }
 }

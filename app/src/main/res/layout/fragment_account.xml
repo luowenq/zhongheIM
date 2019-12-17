@@ -1,13 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
+        <variable
+            name="viewModel"
+            type="com.exam.fs.push.viewmodel.AccountViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white">
+        android:layout_height="match_parent">
+
+        <!--suppress AndroidUnknownAttribute -->
+        <EditText
+            android:id="@+id/ed_account"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/len_48"
+            android:layout_marginStart="@dimen/len_24"
+            android:layout_marginTop="@dimen/len_24"
+            android:layout_marginEnd="@dimen/len_24"
+            android:background="@drawable/icon_radios_bg"
+            android:drawableStart="@drawable/icon_account_bg"
+            android:drawablePadding="@dimen/len_20"
+            android:gravity="center_vertical"
+            android:hint="@string/app_account"
+            android:inputType="text"
+            android:onTextChanged="@{viewModel::onCountTextChanged}"
+            android:paddingStart="@dimen/len_24"
+            android:paddingEnd="0dp"
+            android:text="@{viewModel.accountText}"
+            android:textColorHint="@color/grey_400"
+            android:textSize="@dimen/font_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="Autofill" />
+
+        <!--suppress AndroidUnknownAttribute -->
+        <EditText
+            android:id="@+id/ed_pwd"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/len_48"
+            android:layout_marginStart="@dimen/len_24"
+            android:layout_marginTop="@dimen/len_20"
+            android:layout_marginEnd="@dimen/len_24"
+            android:background="@drawable/icon_radios_bg"
+            android:drawableStart="@drawable/icon_pwd_bg"
+            android:drawablePadding="@dimen/len_20"
+            android:gravity="center_vertical"
+            android:hint="@string/app_pwd"
+            android:inputType="textPassword"
+            android:onTextChanged="@{viewModel::onPwdTextChanged}"
+            android:paddingStart="@dimen/len_24"
+            android:paddingEnd="0dp"
+            android:text="@{viewModel.passwordText}"
+            android:textColorHint="@color/grey_400"
+            android:textSize="@dimen/font_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_account"
+            tools:ignore="Autofill" />
+
+        <TextView
+            android:id="@+id/tv_forgetPwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/len_24"
+            android:layout_marginTop="@dimen/len_16"
+            android:text="@{viewModel.forgetPwd}"
+            android:textColor="@color/blue_600"
+            android:textSize="@dimen/font_14"
+            android:onClick="@{viewModel::onForgetPwdClick}"
+            app:layout_constraintStart_toStartOf="@+id/ed_pwd"
+            app:layout_constraintTop_toBottomOf="@+id/ed_pwd" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="@dimen/len_48"
+            android:layout_marginTop="@dimen/len_44"
+            android:background="@drawable/shape_radios_32dp_bg"
+            android:gravity="center"
+            android:onClick="@{viewModel::onLoginClick}"
+            android:text="@{viewModel.loginText}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/ed_pwd"
+            app:layout_constraintStart_toStartOf="@+id/ed_pwd"
+            app:layout_constraintTop_toBottomOf="@+id/tv_forgetPwd" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
