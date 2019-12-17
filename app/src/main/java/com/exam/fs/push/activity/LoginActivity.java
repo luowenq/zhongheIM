@@ -21,7 +21,6 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
     public void initData(Bundle bundle) {
         XStatusBarHelper.forceFitsSystemWindows(this);
         XStatusBarHelper.immersiveStatusBar(this);
-//        getBinding().viewPager.setCanScroll(false);
         LoginFragmentAdapter mAdapter = new LoginFragmentAdapter(getSupportFragmentManager(),0);
         getBinding().viewPager.setAdapter(mAdapter);
         getBinding().viewPager.setOffscreenPageLimit(mAdapter.getCount());
