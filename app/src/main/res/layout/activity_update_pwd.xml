@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.exam.fs.push.widget.TitleView
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:left_ico_back="true"
+            app:right_btn_isShow="true"
+            app:right_btn_text="@string/app_complete"
+            app:right_icon_res_ishow="false"
+            app:right_text_ishow="false" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/len_16"
+            android:layout_marginTop="@dimen/len_10"
+            android:layout_marginBottom="@dimen/len_10"
+            android:text="@string/app_update_pwd_explain"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/font_12" />
+
+        <EditText
+            android:id="@+id/et_old_pwd"
+            style="@style/eidtTextView"
+            android:hint="@string/app_edit_old_pwd"
+            tools:ignore="Autofill,LabelFor,RtlSymmetry,TextFields" />
+
+        <EditText
+            android:id="@+id/et_new_pwd"
+            android:layout_marginTop="@dimen/len_10"
+            style="@style/eidtTextView"
+            android:hint="@string/app_edit_new_pwd"
+            tools:ignore="Autofill,LabelFor,RtlSymmetry,TextFields" />
+
+        <EditText
+            android:id="@+id/et_again_edit_pwd"
+            style="@style/eidtTextView"
+            android:layout_marginTop="@dimen/len_10"
+            android:hint="@string/app_again_edit_pwd"
+            tools:ignore="Autofill,LabelFor,RtlSymmetry,TextFields" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/len_16"
+            android:layout_marginTop="@dimen/len_10"
+            android:layout_marginBottom="@dimen/len_10"
+            android:text="@string/app_update_pwd_explain"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/font_12" />
+
+        <TextView
+            android:id="@+id/btn_forget_pwd"
+            android:textSize="@dimen/font_12"
+            android:textColor="@color/color_2d8eff"
+            android:layout_marginLeft="@dimen/len_16"
+            android:text="@string/app_forget_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</layout>

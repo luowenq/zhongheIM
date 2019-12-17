@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_f4f4f4"
+        android:orientation="vertical">
+
+        <com.exam.fs.push.widget.TitleView
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:left_ico_back="true"
+            app:right_btn_isShow="false"
+            app:right_icon_res_ishow="false"
+            app:right_text_ishow="false" />
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/siv_verification"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            app:left_text="@string/app_add_me_need_verification"
+            app:right_icon="@drawable/sel_tab_switch" />
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_add_style"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            android:layout_marginTop="@dimen/len_10"
+            app:left_text="@string/app_add_me_style"
+            app:right_icon="@drawable/icon_right_black_more" />
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/siv_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            app:left_text="@string/app_recommend_mail_list"
+            app:right_icon="@drawable/sel_tab_switch" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/len_32"
+            android:layout_marginLeft="@dimen/len_16"
+            android:gravity="center_vertical"
+            android:text="@string/app_explain_open" />
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_blacklist"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            android:layout_marginTop="@dimen/len_10"
+            app:left_text="@string/app_blacklist"
+            app:right_icon="@drawable/icon_right_black_more" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/len_32"
+            android:layout_marginLeft="@dimen/len_16"
+            android:gravity="center_vertical"
+            android:text="@string/app_wechat_moments" />
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_prohibit_other_see"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            android:layout_marginTop="@dimen/len_10"
+            app:left_text="@string/app_prohibit_other_see"
+            app:right_icon="@drawable/icon_right_black_more" />
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_allow_friend"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            app:left_text="@string/app_allow_friend"
+            app:right_icon="@drawable/icon_right_black_more" />
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_prohibit_see_other"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            app:left_text="@string/app_allow_stranger"
+            app:right_icon="@drawable/sel_tab_switch" />
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_wechat_renew"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            android:layout_marginTop="@dimen/len_10"
+            app:left_text="@string/app_wechat_renew"
+            app:right_icon="@drawable/sel_tab_switch" />
+    </LinearLayout>
+</layout>

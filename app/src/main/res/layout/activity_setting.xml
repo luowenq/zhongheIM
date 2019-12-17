@@ -9,6 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/color_f4f4f4"
         android:orientation="vertical">
 
         <com.exam.fs.push.widget.TitleView
@@ -22,5 +23,61 @@
             app:right_icon_res_ishow="false"
             app:right_text_ishow="false" />
 
+        <TextView
+            android:id="@+id/btn_safe"
+            android:text="@string/app_safe"
+            style="@style/setTextView"/>
+
+        <TextView
+            android:id="@+id/btn_message_notice"
+            android:layout_marginTop="@dimen/len_10"
+            android:text="@string/app_new_message_notice"
+            style="@style/setTextView"/>
+
+        <TextView
+            android:id="@+id/btn_static"
+            android:text="@string/app_static"
+            style="@style/setTextView"/>
+
+        <TextView
+            android:id="@+id/btn_chat"
+            android:text="@string/app_chat"
+            style="@style/setTextView"/>
+
+        <TextView
+            android:id="@+id/btn_privacy"
+            android:text="@string/app_privacy"
+            style="@style/setTextView"/>
+
+        <TextView
+            android:id="@+id/btn_currency"
+            android:text="@string/app_currency"
+            style="@style/setTextView"/>
+
+        <TextView
+            android:id="@+id/btn_about_wind"
+            android:layout_marginTop="@dimen/len_10"
+            android:text="@string/app_about_wind"
+            style="@style/setTextView"/>
+
+        <TextView
+            android:id="@+id/btn_help"
+            android:text="@string/app_help"
+            style="@style/setTextView"/>
+
+        <TextView
+            android:id="@+id/btn_plug_in_unit"
+            android:text="@string/app_plug_in_unit"
+            style="@style/setTextView"/>
+
+        <TextView
+            android:id="@+id/btn_change_account"
+            android:text="@string/app_change_account"
+            style="@style/matchBtn"/>
+
+        <TextView
+            android:id="@+id/btn_login_out"
+            android:text="@string/app_exit"
+            style="@style/matchBtn"/>
     </LinearLayout>
 </layout>

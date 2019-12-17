@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -107,6 +108,10 @@ public class TitleView extends BaseConstraintLayoutView<ViewTitleBinding> {
 
     public ImageView getRightImageView() {
         return getBinding().ivRight;
+    }
+
+    public Button getRightButton(){
+        return getBinding().btnButton;
     }
 
     public void setTitle(String title) {

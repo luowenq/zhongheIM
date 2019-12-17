@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:background="@color/color_f4f4f4"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.exam.fs.push.widget.TitleView
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:left_ico_back="true"
+            app:right_btn_isShow="false"
+            app:right_icon_res_ishow="false"
+            app:right_text_ishow="false" />
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_account_number"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            app:right_icon="@drawable/icon_right_black_more"
+            app:left_text="@string/app_account_number"/>
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            app:right_txt="@string/app_phone"
+            app:right_icon="@drawable/icon_right_black_more"
+            app:left_text="@string/app_phone"/>
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_update_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            app:right_txt="@string/app_setted_pwd"
+            app:right_icon="@drawable/icon_right_black_more"
+            app:left_text="@string/app_updat_pwd"/>
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_urgent_contacts"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            android:layout_marginTop="@dimen/font_16"
+            app:right_icon="@drawable/icon_right_black_more"
+            app:left_text="@string/app_account_number"/>
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_login_manage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            app:right_icon="@drawable/icon_right_black_more"
+            app:left_text="@string/app_login_manage"/>
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_more_setting"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            app:right_icon="@drawable/icon_right_black_more"
+            app:left_text="@string/app_more_setting"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.exam.fs.push.widget.TitleView
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:left_ico_back="true"
+            app:right_btn_isShow="true"
+            app:right_btn_text="@string/app_btn_next"
+            app:right_icon_res_ishow="false"
+            app:right_text_ishow="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/len_16"
+            android:layout_marginTop="@dimen/len_10"
+            android:layout_marginBottom="@dimen/len_10"
+            android:text="@string/app_update_phone_info"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/font_12" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            style="@style/eidtTextView"
+            android:hint="@string/app_edit_phone"
+            tools:ignore="Autofill,LabelFor,RtlSymmetry,TextFields" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            android:layout_marginStart="@dimen/len_16"
+            android:layout_marginTop="@dimen/len_10"
+            android:layout_marginEnd="@dimen/len_16"
+            android:background="@drawable/shape_f4f4f4_4dp"
+            android:orientation="horizontal"
+            tools:ignore="UselessLeaf">
+
+            <EditText
+                android:id="@+id/et_code"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/trans"
+                android:hint="@string/app_edit_code"
+                android:paddingStart="@dimen/len_16"
+                android:textColor="@color/color_666666"
+                android:textColorHint="@color/color_bbbbbb"
+                android:textSize="@dimen/len_14"
+                tools:ignore="Autofill,RtlSymmetry,TextFields" />
+
+            <TextView
+                android:id="@+id/btn_get_code"
+                android:layout_width="@dimen/len_128"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/app_get_code"
+                android:textColor="@color/color_5795ff"
+                android:textSize="@dimen/font_14" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/len_16"
+            android:layout_marginTop="@dimen/len_10"
+            android:layout_marginBottom="@dimen/len_10"
+            android:text="@string/app_find_pwd_method"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/font_12" />
+    </LinearLayout>
+</layout>

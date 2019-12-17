@@ -15,4 +15,41 @@
         <attr name="right_icon_res" format="reference" />
 
     </declare-styleable>
+
+    <declare-styleable name="ShowInfoView">
+<!--        左边文字-->
+        <attr name="left_text" format="string"/>
+<!--        左边图标-->
+        <attr name="left_icon" format="reference"/>
+<!--        左边padding-->
+        <attr name="left_padding" format="dimension"/>
+<!--        左边文字和icon的margin-->
+        <attr name="left_draw_margin" format="dimension"/>
+<!--        左边文字大小-->
+        <attr name="left_text_size" format="dimension"/>
+<!--        左边文字颜色-->
+        <attr name="left_text_color" format="color"/>
+<!--        左边icon是否显示-->
+        <attr name="left_icon_is_show" format="boolean"/>
+<!--        右边文字-->
+        <attr name="right_txt" format="string"/>
+<!--        右边文字大小-->
+        <attr name="right_text_size" format="dimension"/>
+<!--        右边文字颜色-->
+        <attr name="right_text_color" format="color"/>
+<!--        右边icon-->
+        <attr name="right_icon" format="reference"/>
+<!--        右边padding-->
+        <attr name="right_padding" format="dimension"/>
+<!--        右边icon和文字的距离-->
+        <attr name="right_icon_margin" format="dimension"/>
+<!--        右边文字距离左边文字的距离-->
+        <attr name="right_text_left_margin" format="dimension"/>
+<!--        右边icon是否显示-->
+        <attr name="right_icon_is_show" format="boolean"/>
+<!--        右边文字是显示-->
+        <attr name="right_text_is_show" format="boolean"/>
+<!--        背景颜色-->
+        <attr name="item_background" format="reference"/>
+    </declare-styleable>
 </resources>

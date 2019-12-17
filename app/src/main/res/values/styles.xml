@@ -37,4 +37,40 @@
         <item name="android:windowExitAnimation">@anim/anim_fade_out</item>
     </style>
 
+    <style name="setTextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/color_666666</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">@dimen/len_16</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingRight">@dimen/len_16</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/len_44</item>
+        <item name="android:drawableEnd">@drawable/icon_right_black_more</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="matchBtn">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/color_666666</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/len_10</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/len_44</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="eidtTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/len_44</item>
+        <item name="android:layout_marginLeft">@dimen/len_16</item>
+        <item name="android:layout_marginRight">@dimen/len_16</item>
+        <item name="android:paddingStart">@dimen/len_16</item>
+        <item name="android:textSize">@dimen/font_14</item>
+        <item name="android:textColor">@color/color_666666</item>
+        <item name="android:textColorHint">@color/color_bbbbbb</item>
+        <item name="android:background">@drawable/shape_f4f4f4_4dp</item>
+    </style>
+
 </resources>
