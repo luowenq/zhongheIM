@@ -65,6 +65,5 @@ dependencies {
         exclude module: 'recyclerview-v7'
     }
     implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.0@aar'
-    implementation 'net.qiujuer.genius:res:2.1.1'
     implementation project(path: ':common')
 }

@@ -70,12 +70,7 @@ public abstract class BaseActivity<V extends ViewDataBinding> extends XActivity<
             if (rightTextRes > 0)
                 titleView.setRightText(rightTextRes, rightClickListener);
             if (backClickListener == null)
-                titleView.setBackClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Router.pop(context);
-                    }
-                });
+                titleView.setBackClickListener(v -> Router.pop(context));
             else
                 titleView.setBackClickListener(backClickListener);
         }
