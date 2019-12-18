@@ -34,7 +34,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:networkSecurityConfig="@xml/network_security_config"
         tools:ignore="GoogleAppIndexingWarning">
+
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -90,6 +92,30 @@
         <activity
             android:name=".activity.PrivacyActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CurrencyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.EditUserInfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.UpdateNicknameActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.SexSetActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.AddrSetActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.SignSetActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.PayActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.PayManagerActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

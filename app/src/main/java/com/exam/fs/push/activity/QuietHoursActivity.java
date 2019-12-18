@@ -8,6 +8,10 @@ import com.exam.fs.push.base.BaseActivity;
 import com.exam.fs.push.databinding.ActivityQuietHoursBinding;
 import com.exam.fs.push.router.RouterTables;
 
+/**
+ * 勿扰模式
+ * HJQ
+ */
 @Route(path = RouterTables.PAGE_ACTIVITY_QUIET_HOURS)
 public class QuietHoursActivity extends BaseActivity<ActivityQuietHoursBinding> {
     @Override

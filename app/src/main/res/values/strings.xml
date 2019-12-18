@@ -128,5 +128,33 @@
     <string name="app_allow_friend">允许朋友查看朋友圈范围</string>
     <string name="app_allow_stranger">允许陌生人查看十条朋友圈</string>
     <string name="app_wechat_renew">朋友圈更新提醒</string>
-
+    <string name="app_portrait_model">开启横屏模式</string>
+    <string name="app_multilingual">多语言</string>
+    <string name="app_font_size">字体大小</string>
+    <string name="app_multi_media">照片、视频和文件</string>
+    <string name="app_find_page">发现页管理</string>
+    <string name="app_head_photo">头像</string>
+    <string name="app_nickname">昵称</string>
+    <string name="app_qr_code">二维码</string>
+    <string name="app_sex">性别</string>
+    <string name="app_addr">地区</string>
+    <string name="app_sign">个性签名</string>
+    <string name="app_man">男</string>
+    <string name="app_woman">女</string>
+    <string name="app_edit_new_nickname">请输入新昵称</string>
+    <string name="app_edit_sign">说点什么吧</string>
+    <string name="app_sing_max_length">50</string>
+    <string name="app_receivables_payment">收付款</string>
+    <string name="app_wallet">钱包</string>
+    <string name="app_service">服务</string>
+    <string name="app_other_service">第三方服务</string>
+    <string name="app_real_name">实名认证</string>
+    <string name="app_update_pay_pwd">修改支付密码</string>
+    <string name="app_forget_pay_pwd">忘记支付密码</string>
+    <string name="app_fingerprint_pay">指纹支付</string>
+    <string name="app_allow_transfer_accounts_for_phone">允许通过手机号向我转账</string>
+    <string name="app_charging_service">扣费服务</string>
+    <string name="app_get_money_time">转账到账时间</string>
+    <string name="app_service_manager">服务管理</string>
+    <string name="app_del_wechat_pay">注销微信支付</string>
 </resources>

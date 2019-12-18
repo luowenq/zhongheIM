@@ -1,5 +1,8 @@
 package com.exam.fs.push;
 
+import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
 import androidx.multidex.MultiDexApplication;
 
 import com.alibaba.android.arouter.launcher.ARouter;
@@ -36,5 +39,6 @@ public class App extends MultiDexApplication {
         }
         XDroidBaseConf.getInstance().setLog(BuildConfig.DEBUG).build();
         ARouter.init(this);
+
     }
 }

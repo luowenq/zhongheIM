@@ -16,8 +16,6 @@
             android:id="@+id/titleView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:left_ico_back="true"
             app:right_btn_isShow="false"
             app:right_icon_res_ishow="false"

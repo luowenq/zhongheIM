@@ -2,6 +2,9 @@ package com.exam.fs.push.net;
 
 import com.exam.fs.push.model.UserModel;
 import com.exam.fs.push.model.base.SimpleModel;
+import com.exam.fs.push.model.bean.UploadFileBean;
+
+import java.io.File;
 
 import io.reactivex.Observable;
 import retrofit2.http.Field;
@@ -26,4 +29,11 @@ public interface MankoService {
     @FormUrlEncoded
     Observable<SimpleModel<String>> register(@Field("username") String username
             , @Field("verifyCode") String verifyCode, @Field("password") String password);//注册
+
+    @POST("file/upload")
+    @FormUrlEncoded
+    Observable<SimpleModel<UploadFileBean>> loadImage(
+            @Field("token") String token,
+            @Field("file") File file
+    );
 }

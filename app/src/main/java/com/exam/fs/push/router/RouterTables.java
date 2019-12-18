@@ -35,4 +35,20 @@ public class RouterTables {
     public static final String PAGE_ACTIVITY_EXPRESSION_MANAGER = "/activity/expression_manager";
     //隐私
     public static final String PAGE_ACTIVITY_PRIVACY = "/activity/privacy";
+    //通用
+    public static final String PAGE_ACTIVITY_CURRENCY = "/activity/currency";
+    //编辑或修改个人信息
+    public static final String PAGE_ACTIVITY_EDIT_USERINFO = "/activity/edit_userinfo";
+    //修改昵称
+    public static final String PAGE_ACTIVITY_UPDATE_NICKNAME = "/activity/update_nickname";
+    //性别修改
+    public static final String PAGE_ACTIVITY_SEX_SET = "/activity/sex_set";
+    //设置地区
+    public static final String PAGE_ACTIVITY_SET_ADDR = "/activity/set_addr";
+    //个性签名
+    public static final String PAGE_ACTIVITY_SIGN_SET = "/activity/sign_set";
+    //支付
+    public static final String PAGE_ACTIVITY_PAY = "/activity/pay";
+    //支付管理
+    public static final String PAGE_ACTIVITY_PAY_MANAGER = "/activity/pay_manager";
 }

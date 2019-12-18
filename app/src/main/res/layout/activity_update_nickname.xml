@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.exam.fs.push.widget.TitleView
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:left_ico_back="true"
+            app:right_btn_text="@string/app_finish"
+            app:right_btn_isShow="true"
+            app:right_icon_res_ishow="false"
+            app:right_text_ishow="false" />
+
+        <EditText
+            android:hint="@string/app_edit_new_nickname"
+            app:layout_constraintTop_toBottomOf="@+id/titleView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="@dimen/len_10"
+            style="@style/eidtTextView"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

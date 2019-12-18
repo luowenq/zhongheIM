@@ -51,5 +51,7 @@
         <attr name="right_text_is_show" format="boolean"/>
 <!--        背景颜色-->
         <attr name="item_background" format="reference"/>
+<!--        设置右边图片-->
+        <attr name="right_img" format="reference"/>
     </declare-styleable>
 </resources>

@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.exam.fs.push.R;
@@ -84,6 +85,10 @@ public class ShowInfoView extends BaseConstraintLayoutView<ViewShowInfoBinding> 
      * 背景颜色
      */
     private Drawable itemBackground;
+    /**
+     * 设置右边图片
+     */
+    private Drawable rightImg;
 
     private Context context;
 
@@ -141,6 +146,8 @@ public class ShowInfoView extends BaseConstraintLayoutView<ViewShowInfoBinding> 
             rightTextIsShow = array.getBoolean(R.styleable.ShowInfoView_right_text_is_show, false);
             /** 背景颜色*/
             itemBackground = array.getDrawable(R.styleable.ShowInfoView_item_background);
+            /** 设置右边图片*/
+            rightImg = array.getDrawable(R.styleable.ShowInfoView_right_img);
         } finally {
             array.recycle();
         }
@@ -170,7 +177,7 @@ public class ShowInfoView extends BaseConstraintLayoutView<ViewShowInfoBinding> 
 
         setBackgroundView(itemBackground);
         setPaddingView(leftPadding, rightPadding);
-
+        setRightImg(rightImg);
     }
 
     public void setLeftIcon(Drawable icon) {
@@ -245,7 +252,7 @@ public class ShowInfoView extends BaseConstraintLayoutView<ViewShowInfoBinding> 
     }
 
     public void setRightIconMargin(float rightIconMargin) {
-        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) getBinding().imgRight.getLayoutParams();
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) getBinding().imgRight.getLayoutParams();
         layoutParams.setMargins(Kits.Dimens.dpToPxInt(context, rightIconMargin), 0, 0, 0);
         getBinding().imgRight.setLayoutParams(layoutParams);
     }
@@ -264,6 +271,13 @@ public class ShowInfoView extends BaseConstraintLayoutView<ViewShowInfoBinding> 
 
     public ImageView getRightImageView(){
         return getBinding().imgRight;
+    }
+
+    public void setRightImg(Drawable rightImg){
+        if(rightImg != null) {
+            getBinding().rightImg.setVisibility(VISIBLE);
+            getBinding().rightImg.setImageDrawable(rightImg);
+        }
     }
 
     @Override

@@ -33,6 +33,9 @@ public class SettingActivity extends BaseActivity<ActivitySettingBinding> {
         getBinding().btnPrivacy.setOnClickListener(view -> {
             ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_PRIVACY).navigation();
         });
+        getBinding().btnCurrency.setOnClickListener(view -> {
+            ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_CURRENCY).navigation();
+        });
     }
 
     @Override

@@ -1,15 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
     </data>
 
-    <LinearLayout
-        android:orientation="vertical"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:background="@color/color_f4f4f4"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <com.exam.fs.push.widget.TitleView
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:left_ico_back="true"
+            app:right_btn_isShow="false"
+            app:right_icon_res_ishow="false"
+            app:right_text_ishow="false" />
 
-    </LinearLayout>
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/siv_portrait_model"
+            app:left_text="@string/app_portrait_model"
+            app:right_icon="@drawable/sel_tab_switch"
+            app:layout_constraintTop_toBottomOf="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"/>
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/siv_multilingual"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            android:layout_marginTop="@dimen/len_10"
+            app:layout_constraintTop_toBottomOf="@+id/siv_portrait_model"
+            app:right_icon="@drawable/icon_right_black_more"
+            app:left_text="@string/app_multilingual"/>
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/siv_font_size"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            app:layout_constraintTop_toBottomOf="@+id/siv_multilingual"
+            app:right_icon="@drawable/icon_right_black_more"
+            app:left_text="@string/app_font_size"/>
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/siv_multi_media"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            app:layout_constraintTop_toBottomOf="@+id/siv_font_size"
+            app:right_icon="@drawable/icon_right_black_more"
+            app:left_text="@string/app_multi_media"/>
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/siv_find_page"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            android:layout_marginTop="@dimen/len_10"
+            app:layout_constraintTop_toBottomOf="@+id/siv_multi_media"
+            app:right_icon="@drawable/icon_right_black_more"
+            app:left_text="@string/app_find_page"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:background="@color/color_f4f4f4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.exam.fs.push.widget.TitleView
+                android:id="@+id/titleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:left_ico_back="true"
+                app:right_btn_isShow="false"
+                app:right_icon_res_ishow="false"
+                app:right_text_ishow="false" />
+
+            <com.exam.fs.push.widget.ShowInfoView
+                android:id="@+id/btn_real_name"
+                app:layout_constraintTop_toBottomOf="@+id/titleView"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_44"
+                app:right_icon="@drawable/icon_right_black_more"
+                app:left_text="@string/app_real_name"/>
+
+            <com.exam.fs.push.widget.ShowInfoView
+                android:id="@+id/btn_update_pay_pwd"
+                app:layout_constraintTop_toBottomOf="@+id/btn_real_name"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/len_10"
+                android:layout_height="@dimen/len_44"
+                app:right_icon="@drawable/icon_right_black_more"
+                app:left_text="@string/app_update_pay_pwd"/>
+
+            <com.exam.fs.push.widget.ShowInfoView
+                android:id="@+id/btn_forget_pay_pwd"
+                app:layout_constraintTop_toBottomOf="@+id/btn_update_pay_pwd"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_44"
+                app:right_icon="@drawable/icon_right_black_more"
+                app:left_text="@string/app_forget_pay_pwd"/>
+
+            <com.exam.fs.push.widget.ShowInfoView
+                android:id="@+id/siv_message_notice"
+                app:layout_constraintTop_toBottomOf="@+id/btn_forget_pay_pwd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:left_text="@string/app_fingerprint_pay"
+                android:layout_marginTop="@dimen/len_10"
+                app:right_icon="@drawable/sel_tab_switch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_44"/>
+
+            <com.exam.fs.push.widget.ShowInfoView
+                android:id="@+id/siv_transfer_accounts"
+                app:layout_constraintTop_toBottomOf="@+id/siv_message_notice"
+                app:layout_constraintStart_toStartOf="parent"
+                app:left_text="@string/app_allow_transfer_accounts_for_phone"
+                app:right_icon="@drawable/sel_tab_switch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_44"/>
+
+            <com.exam.fs.push.widget.ShowInfoView
+                android:id="@+id/btn_charging_service"
+                app:layout_constraintTop_toBottomOf="@+id/siv_transfer_accounts"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/len_10"
+                android:layout_height="@dimen/len_44"
+                app:right_icon="@drawable/icon_right_black_more"
+                app:left_text="@string/app_charging_service"/>
+
+            <com.exam.fs.push.widget.ShowInfoView
+                android:id="@+id/btn_get_money_time"
+                app:layout_constraintTop_toBottomOf="@+id/btn_charging_service"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_44"
+                app:right_icon="@drawable/icon_right_black_more"
+                app:left_text="@string/app_get_money_time"/>
+
+            <com.exam.fs.push.widget.ShowInfoView
+                android:id="@+id/btn_service_manager"
+                app:layout_constraintTop_toBottomOf="@+id/btn_get_money_time"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/len_10"
+                android:layout_height="@dimen/len_44"
+                app:right_icon="@drawable/icon_right_black_more"
+                app:left_text="@string/app_service_manager"/>
+
+            <com.exam.fs.push.widget.ShowInfoView
+                android:id="@+id/btn_del_wechat_pay"
+                app:layout_constraintTop_toBottomOf="@+id/btn_service_manager"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/len_10"
+                android:layout_height="@dimen/len_44"
+                app:right_icon="@drawable/icon_right_black_more"
+                app:left_text="@string/app_del_wechat_pay"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

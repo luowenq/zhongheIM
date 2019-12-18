@@ -8,6 +8,10 @@ import com.exam.fs.push.base.BaseActivity;
 import com.exam.fs.push.databinding.ActivityMessageNoticeBinding;
 import com.exam.fs.push.router.RouterTables;
 
+/**
+ * 新消息提醒
+ * HJQ
+ */
 @Route(path = RouterTables.PAGE_ACTIVITY_MESSAGE_NOTICE)
 public class MessageNoticeActivity extends BaseActivity<ActivityMessageNoticeBinding> {
     @Override
