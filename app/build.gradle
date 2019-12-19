@@ -17,6 +17,7 @@ android {
         dexOptions {
             jumboMode true
         }
+        multiDexEnabled true
         manifestPlaceholders = [
                 JPUSH_PKGNAME: "com.exam.fs.push",
                 JPUSH_APPKEY : "b4cfaca36af4be1298f2334e", //JPush上注册的包名对应的appkey.
@@ -35,6 +36,10 @@ android {
     compileOptions {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+        incremental true
     }
 }
 
