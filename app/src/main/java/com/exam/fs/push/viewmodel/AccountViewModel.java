@@ -10,6 +10,7 @@ import androidx.databinding.ObservableField;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.exam.fs.push.R;
 import com.exam.fs.push.base.SimpleObserver;
+import com.exam.fs.push.db.UserEntry;
 import com.exam.fs.push.eventbus.EventBusBean;
 import com.exam.fs.push.model.UserModel;
 import com.exam.fs.push.model.base.SimpleModel;
@@ -21,6 +22,10 @@ import com.exam.fs.push.callback.ViewModelLifecycle;
 import cn.droidlover.xdroid.event.BusFactory;
 import cn.droidlover.xdroid.net.XApi;
 import cn.droidlover.xdroidbase.kit.ToastManager;
+import cn.droidlover.xdroidbase.log.XLog;
+import cn.jpush.im.android.api.JMessageClient;
+import cn.jpush.im.android.api.model.UserInfo;
+import cn.jpush.im.api.BasicCallback;
 import io.reactivex.ObservableSource;
 import io.reactivex.functions.Function;
 
@@ -60,9 +65,23 @@ public class AccountViewModel extends BaseFragmentViewModel implements ViewModel
                     Config.setUser(model.content);
                     ToastManager.showShort(context, R.string.app_success);
                     BusFactory.getBus().post(new EventBusBean(EventBusBean.TAG_LOGIN_SUCCESS));
-                    if (context instanceof Activity) {
-                        ((Activity) context).finish();
-                    }
+                    JMessageClient.login(model.content.username, model.content.password, new BasicCallback() {
+                        @Override
+                        public void gotResult(int i, String s) {
+                            XLog.d("回调结果是: >>>>>>>", s);
+                            UserInfo myInfo = JMessageClient.getMyInfo();
+                            String username = myInfo.getUserName();
+                            String appKey = myInfo.getAppKey();
+                            UserEntry user = UserEntry.getUser(username, appKey);
+                            if (null == user) {
+                                user = new UserEntry(username, appKey);
+                                user.save();
+                            }
+                            if (context instanceof Activity) {
+                                ((Activity) context).finish();
+                            }
+                        }
+                    });
                 }
             };
             UserModel.login(isAccount, isPassword).flatMap((Function<SimpleModel<String>, ObservableSource<SimpleModel<UserModel>>>) model -> {

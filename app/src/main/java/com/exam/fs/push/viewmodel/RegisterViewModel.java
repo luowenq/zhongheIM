@@ -77,7 +77,7 @@ public class RegisterViewModel extends BaseFragmentViewModel implements ViewMode
         if (phoneLength != phoneMaxLength) {
             ToastManager.showShort(view.getContext(), R.string.app_phoneNumber);
         } else {
-            observer = new SimpleObserver<Long>(false) {
+            observer = new SimpleObserver<Long>() {
                 @Override
                 public void onNext(Long aLong) {
                     if (aLong == 1) {

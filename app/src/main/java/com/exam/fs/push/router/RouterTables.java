@@ -51,4 +51,16 @@ public class RouterTables {
     public static final String PAGE_ACTIVITY_PAY = "/activity/pay";
     //支付管理
     public static final String PAGE_ACTIVITY_PAY_MANAGER = "/activity/pay_manager";
+    //添加好友
+    public static final String PAGE_ACTIVITY_ADD_FRIENDY = "/activity/add/friendy";
+    //搜索
+    public static final String PAGE_ACTIVITY_SERSON = "/activity/serson";
+    //好友信息
+    public static final String PAGE_ACTIVITY_FRIEND_INFO = "/activity/friend/info";
+    //添加好友界面
+    public static final String PAGE_ACTIVITY_SEARCH_FRIEND_INFO = "/activity/search/friend/info";
+    //好友验证
+    public static final String PAGE_ACTIVITY_VARLY_FRIENDY = "/activity/varly/friendy";
+    //聊天界面
+    public static final String PAGE_ACTIVITY_CHAT = "/activity/chat";
 }

@@ -31,6 +31,17 @@
     <string name="app_success" translatable="false">登录成功</string>
     <string name="app_getVarly_success" translatable="false">获取成功</string>
     <string name="app_register_success" translatable="false">注册成功</string>
+    <string name="app_serson" translatable="false">搜索</string>
+    <string name="app_friendy_userName_empty" translatable="false">请输入您要搜索的好友账号</string>
+    <string name="app_friendy_already" translatable="false">你们已经是好友啦!</string>
+    <string name="app_user_no_way" translatable="false">该用户不存在</string>
+    <string name="app_setting_bz" translatable="false">设置备注和标签</string>
+    <string name="app_pyq" translatable="false">朋友圈</string>
+    <string name="app_more_msg" translatable="false">更多信息</string>
+    <string name="app_send_msg" translatable="false">发消息</string>
+    <string name="app_add_con" translatable="false">添加到通讯录</string>
+    <string name="app_send" translatable="false">发送</string>
+    <string name="app_input_msg" translatable="false">请输入验证信息</string>
     <string name="app_zc">隐私政策 本应用尊重并保护所有使用服务用户的个人隐私权。
         为了给您提供更准确、更有个性化的服务，本应用会按照本隐私权政策的规定使用和披露您的个人信息。但本应用将以高度的勤勉、审慎义务对待这些信息。除本隐私权政策另有规定外，在未征得您事先许可的情况下，本应用不会将这些信息对外披露或向第三方提供。本应用会不时更新本隐私权政策。
         您在同意本应用服务使用协议之时，即视为您已经同意本隐私权政策全部内容。本隐私权政策属于本应用服务使用协议不可分割的一部分。

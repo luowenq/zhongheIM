@@ -16,23 +16,9 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:left_ico_back="false"
             app:right_btn_isShow="false"
-            app:right_icon_res_ishow="true"
+            app:right_icon_res_ishow="false"
             app:right_text_ishow="false" />
-
-        <ListView
-            android:id="@+id/conv_list_view"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="0dp"
-            android:divider="@drawable/main_list_divider_line"
-            android:dividerHeight="0.3dp"
-            android:headerDividersEnabled="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

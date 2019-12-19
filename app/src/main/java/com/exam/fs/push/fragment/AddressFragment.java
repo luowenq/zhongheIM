@@ -4,10 +4,12 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.exam.fs.push.R;
 import com.exam.fs.push.base.BaseFragment;
 import com.exam.fs.push.databinding.FragmentAddressBinding;
 import com.exam.fs.push.dialog.AddDialog;
+import com.exam.fs.push.router.RouterTables;
 
 /**
  * 通讯录
@@ -31,7 +33,15 @@ public class AddressFragment extends BaseFragment<FragmentAddressBinding> {
         getBinding().titleView.setRightBtnRes(R.drawable.icon_add_friendy_two, v -> {
             AddDialog dialog = new AddDialog(context);
             dialog.setOnItemsClickListener(text -> {
-
+                switch (text) {
+                    case "发起群聊":
+                        break;
+                    case "添加好友":
+                        ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_ADD_FRIENDY).navigation();
+                        break;
+                    case "扫一扫!":
+                        break;
+                }
             });
             dialog.show();
         });

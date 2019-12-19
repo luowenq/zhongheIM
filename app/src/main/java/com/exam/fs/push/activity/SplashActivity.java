@@ -17,6 +17,7 @@ import com.exam.fs.push.adapter.SplashAdapter;
 import com.exam.fs.push.base.BaseActivity;
 import com.exam.fs.push.databinding.ActivitySplashBinding;
 import com.exam.fs.push.router.RouterTables;
+import com.exam.fs.push.utils.Config;
 import com.exam.fs.push.utils.JumpPermissionManagement;
 import com.shizhefei.view.indicator.IndicatorViewPager;
 import com.shizhefei.view.indicator.slidebar.DrawableBar;
@@ -84,7 +85,7 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
     }
 
     private void jump() {
-        ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_LOGIN).navigation(context, new NavigationCallback() {
+        ARouter.getInstance().build(Config.isLogin() ? RouterTables.PAGE_ACTIVITY_MAIN : RouterTables.PAGE_ACTIVITY_LOGIN).navigation(context, new NavigationCallback() {
             @Override
             public void onFound(Postcard postcard) {
             }
