@@ -1,8 +1,5 @@
 package com.exam.fs.push;
 
-import android.widget.ImageView;
-
-import androidx.annotation.NonNull;
 import androidx.multidex.MultiDexApplication;
 
 import com.activeandroid.ActiveAndroid;
