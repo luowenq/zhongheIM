@@ -14,6 +14,7 @@ import com.exam.fs.push.widget.TitleView;
 
 import cn.droidlover.xdroid.base.XFragment;
 import cn.droidlover.xdroidbase.router.Router;
+import cn.jpush.im.android.api.JMessageClient;
 import me.shihao.library.XStatusBarHelper;
 
 public abstract class BaseFragment<V extends ViewDataBinding> extends XFragment<V> {
@@ -30,6 +31,8 @@ public abstract class BaseFragment<V extends ViewDataBinding> extends XFragment<
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         isInit = true;
         setParam();
+        //订阅接收消息,子类只要重写onEvent就能收到消息
+        JMessageClient.registerEventReceiver(this);
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 

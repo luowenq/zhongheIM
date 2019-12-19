@@ -6,6 +6,9 @@ import com.activeandroid.ActiveAndroid;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.exam.fs.push.db.UserEntry;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cn.droidlover.xdroidbase.XDroidBaseConf;
 import cn.droidlover.xdroidbase.kit.AppUtils;
 import cn.jpush.im.android.api.JMessageClient;
@@ -19,6 +22,7 @@ public class App extends MultiDexApplication {
     public static final String GROUP_ID = "groupId";
     public static final String TARGET_APP_KEY = "targetAppKey";
     public static final String CONV_TITLE = "conv_title";
+    public static List<String> forAddFriend = new ArrayList<>();
 
     public static App getInstance() {
         if (mInstance == null) {

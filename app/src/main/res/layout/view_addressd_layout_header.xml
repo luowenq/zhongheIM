@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/add_title_serson"
+        layout="@layout/view_layout_serson"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/verify_ll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_52"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="@dimen/len_36"
+                    android:layout_height="@dimen/len_36"
+                    android:contentDescription="@string/app_name"
+                    android:layout_marginStart="@dimen/len_16"
+                    android:background="@drawable/shape_oval_org_bg"
+                    android:src="@drawable/icon_img_addrees_one" />
+
+                <TextView
+                    android:id="@+id/friend_verification_num"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginStart="@dimen/len_44"
+                    android:background="@drawable/red_circle"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/font_10" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingStart="5.67dp"
+                android:paddingEnd="0dp"
+                android:text="新的朋友"
+                android:textColor="#2C2C2C"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/group_ll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_52"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="@dimen/len_36"
+                    android:layout_height="@dimen/len_36"
+                    android:contentDescription="@string/app_name"
+                    android:layout_marginStart="14.67dp"
+                    android:src="@drawable/icon_img_addrees_two"
+                    android:background="@drawable/shape_oval_green_bg" />
+
+                <TextView
+                    android:id="@+id/group_verification_num"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="@dimen/len_44"
+                    android:background="@drawable/red_circle"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/font_10" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingStart="5.67dp"
+                android:paddingEnd="0dp"
+                android:text="群聊"
+                android:textColor="#2C2C2C"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tim_ll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_52"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="@dimen/len_36"
+                    android:layout_height="@dimen/len_36"
+                    android:contentDescription="@string/app_name"
+                    android:layout_marginStart="@dimen/len_16"
+                    android:src="@drawable/icon_img_addrees_two"
+                    android:background="@drawable/shape_oval_bule_bg" />
+
+                <!--<TextView
+                    android:id="@+id/tim_verification_num"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="@dimen/len_44"
+                    android:background="@drawable/red_circle"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/font_10" />-->
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/len_10"
+                android:paddingEnd="0dp"
+                android:text="风声团队"
+                android:textColor="#2C2C2C"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

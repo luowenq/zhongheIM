@@ -81,4 +81,5 @@ dependencies {
     implementation 'cn.jiguang.sdk:jcore:2.0.0'  // 此处以JCore 2.0.0 版本为例。
     implementation project(path: ':common')
     implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.4.0'
+    implementation 'com.github.mtotschnig:StickyListHeaders:2.7.1'
 }
