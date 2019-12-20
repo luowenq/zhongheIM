@@ -1,5 +1,10 @@
 package com.exam.fs.push;
 
+import android.app.Activity;
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.multidex.MultiDexApplication;
 
 import com.activeandroid.ActiveAndroid;
@@ -23,6 +28,8 @@ public class App extends MultiDexApplication {
     public static final String TARGET_APP_KEY = "targetAppKey";
     public static final String CONV_TITLE = "conv_title";
     public static List<String> forAddFriend = new ArrayList<>();
+    private static Activity activityTop = null;
+    private static List<Activity> activities = new ArrayList<>();
 
     public static App getInstance() {
         if (mInstance == null) {
@@ -33,6 +40,18 @@ public class App extends MultiDexApplication {
             }
         }
         return mInstance;
+    }
+
+    public static Activity getTopActivity(){
+        return activityTop;
+    }
+
+    public static void finishAll(){
+        for (Activity activity:activities){
+            if (!activity.isFinishing()){
+                activity.finish();
+            }
+        }
     }
 
     @Override
@@ -50,6 +69,43 @@ public class App extends MultiDexApplication {
         JMessageClient.setDebugMode(true);//上线后关闭Debug模式
         JMessageClient.init(this, true);
         ActiveAndroid.initialize(this);
+
+        registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
+            @Override
+            public void onActivityCreated(@NonNull Activity activity, @Nullable Bundle savedInstanceState) {
+                activities.add(activity);
+            }
+
+            @Override
+            public void onActivityStarted(@NonNull Activity activity) {
+
+            }
+
+            @Override
+            public void onActivityResumed(@NonNull Activity activity) {
+                activityTop = activity;
+            }
+
+            @Override
+            public void onActivityPaused(@NonNull Activity activity) {
+
+            }
+
+            @Override
+            public void onActivityStopped(@NonNull Activity activity) {
+
+            }
+
+            @Override
+            public void onActivitySaveInstanceState(@NonNull Activity activity, @NonNull Bundle outState) {
+
+            }
+
+            @Override
+            public void onActivityDestroyed(@NonNull Activity activity) {
+                activities.remove(activity);
+            }
+        });
     }
 
     public static UserEntry getUserEntry() {

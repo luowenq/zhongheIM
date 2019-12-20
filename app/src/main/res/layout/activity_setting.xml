@@ -69,11 +69,13 @@
             style="@style/setTextView"/>
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/btn_change_account"
             android:text="@string/app_change_account"
             style="@style/matchBtn"/>
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/btn_login_out"
             android:text="@string/app_exit"
             style="@style/matchBtn"/>

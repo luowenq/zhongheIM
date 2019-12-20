@@ -1,6 +1,7 @@
 package com.exam.fs.push.base;
 
 import com.exam.fs.push.dialog.LoadingDialogHelper;
+import com.exam.fs.push.utils.LoginOut;
 
 import cn.droidlover.xdroid.net.exception.ResultErrorException;
 import cn.droidlover.xdroidbase.kit.AppUtils;
@@ -26,6 +27,9 @@ public abstract class SimpleObserver<T> extends ResourceObserver<T> {
     @Override
     public void onError(Throwable e) {
         if (e instanceof ResultErrorException) {
+            if(((ResultErrorException) e).msg.equals("token无效")){
+                LoginOut.loginOut();
+            }
             ToastManager.showShort(AppUtils.getAppContext(), ((ResultErrorException) e).msg);
         } else {
             ToastManager.showShort(AppUtils.getAppContext(), "未知错误");

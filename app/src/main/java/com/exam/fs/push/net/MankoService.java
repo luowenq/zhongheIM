@@ -4,12 +4,13 @@ import com.exam.fs.push.model.UserModel;
 import com.exam.fs.push.model.base.SimpleModel;
 import com.exam.fs.push.model.bean.UploadFileBean;
 
-import java.io.File;
-
 import io.reactivex.Observable;
+import okhttp3.MultipartBody;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 
 public interface MankoService {
 
@@ -31,9 +32,31 @@ public interface MankoService {
             , @Field("verifyCode") String verifyCode, @Field("password") String password);//注册
 
     @POST("file/upload")
-    @FormUrlEncoded
+    @Multipart
     Observable<SimpleModel<UploadFileBean>> loadImage(
-            @Field("token") String token,
-            @Field("file") File file
+            @Part MultipartBody.Part file
+    );
+
+    @POST("user/updateUserInfo")
+    @FormUrlEncoded
+    Observable<SimpleModel<String>> updateUserInfo(
+            @Field("userId") String userId,
+            @Field("headIcon") String headIcon,
+            @Field("sign") String sign,
+            @Field("eMail") String eMail,
+            @Field("nickname") String nickname,
+            @Field("sex") String sex,
+            @Field("province") String province,
+            @Field("city") String city,
+            @Field("backgroundImg") String backgroundImg
+    );
+
+    @POST("user/updatePassword")
+    @FormUrlEncoded
+    Observable<SimpleModel<String>> updatePassword(
+            @Field("userId") String userId,
+            @Field("oldPassword") String oldPassword,
+            @Field("newPassword") String newPassword,
+            @Field("checkNewPassword") String checkNewPassword
     );
 }

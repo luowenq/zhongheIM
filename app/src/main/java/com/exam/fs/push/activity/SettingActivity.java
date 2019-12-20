@@ -7,7 +7,11 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.exam.fs.push.R;
 import com.exam.fs.push.base.BaseActivity;
 import com.exam.fs.push.databinding.ActivitySettingBinding;
+import com.exam.fs.push.eventbus.EventBusBean;
 import com.exam.fs.push.router.RouterTables;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 /**
  * 设置
@@ -36,6 +40,18 @@ public class SettingActivity extends BaseActivity<ActivitySettingBinding> {
         getBinding().btnCurrency.setOnClickListener(view -> {
             ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_CURRENCY).navigation();
         });
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(EventBusBean busBean) {
+        if (busBean.getTag() == EventBusBean.TAG_FINISH_ALL_PAGE) {
+            finish();
+        }
+    }
+
+    @Override
+    public boolean useEventBus() {
+        return true;
     }
 
     @Override

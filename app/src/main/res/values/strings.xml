@@ -29,6 +29,8 @@
     <string name="app_title_great">《风声用户协议》</string>
     <string name="app_xy">同意协议</string>
     <string name="app_success" translatable="false">登录成功</string>
+    <string name="app_update_userinfo_success">修改个人信息成功</string>
+    <string name="app_update_pwd_success">修改密码成功</string>
     <string name="app_getVarly_success" translatable="false">获取成功</string>
     <string name="app_register_success" translatable="false">注册成功</string>
     <string name="app_serson" translatable="false">搜索</string>
@@ -91,11 +93,11 @@
     <string name="app_phone">手机号</string>
     <string name="app_account_number">账号</string>
     <string name="app_updat_pwd">修改密码</string>
-    <string name="app_setted_pwd">已设置</string>
+    <string name="app_setted_pwd">未设置</string>
     <string name="app_btn_urgent_contacts">应急联系人</string>
     <string name="app_login_manage">登录设备管理</string>
     <string name="app_more_setting">更多安全设置</string>
-    <string name="app_your_phone_number">你的手机号:%d</string>
+    <string name="app_your_phone_number">你的手机号:</string>
     <string name="app_view_address_book">查看手机通讯录</string>
     <string name="app_update_phone">更换手机号</string>
     <string name="app_btn_next">下一步</string>
@@ -168,5 +170,6 @@
     <string name="app_charging_service">扣费服务</string>
     <string name="app_get_money_time">转账到账时间</string>
     <string name="app_service_manager">服务管理</string>
+    <string name="app_no_function">功能暂未开放</string>
     <string name="app_del_wechat_pay">注销微信支付</string>
 </resources>

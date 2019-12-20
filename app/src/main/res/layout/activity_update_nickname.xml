@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.exam.fs.push.viewmodel.EditUserInfoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +24,11 @@
             app:right_text_ishow="false" />
 
         <EditText
+            android:id="@+id/et_nickname"
+            android:text="@{viewModel.nickName}"
             android:hint="@string/app_edit_new_nickname"
+            android:maxLines="1"
+            android:maxLength="10"
             app:layout_constraintTop_toBottomOf="@+id/titleView"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginTop="@dimen/len_10"

@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.exam.fs.push.viewmodel.UpdatePwdViewModel" />
     </data>
 
     <LinearLayout
@@ -36,6 +38,9 @@
             android:id="@+id/et_old_pwd"
             style="@style/eidtTextView"
             android:hint="@string/app_edit_old_pwd"
+            android:maxLines="1"
+            android:maxLength="12"
+            android:inputType="textPassword"
             tools:ignore="Autofill,LabelFor,RtlSymmetry,TextFields" />
 
         <EditText
@@ -43,6 +48,9 @@
             style="@style/eidtTextView"
             android:layout_marginTop="@dimen/len_10"
             android:hint="@string/app_edit_new_pwd"
+            android:maxLines="1"
+            android:maxLength="12"
+            android:inputType="textPassword"
             tools:ignore="Autofill,LabelFor,RtlSymmetry,TextFields" />
 
         <EditText
@@ -50,6 +58,9 @@
             style="@style/eidtTextView"
             android:layout_marginTop="@dimen/len_10"
             android:hint="@string/app_again_edit_pwd"
+            android:maxLines="1"
+            android:maxLength="12"
+            android:inputType="textPassword"
             tools:ignore="Autofill,LabelFor,RtlSymmetry,TextFields" />
 
         <TextView
