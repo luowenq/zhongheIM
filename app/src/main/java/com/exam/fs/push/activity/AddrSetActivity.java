@@ -81,7 +81,7 @@ public class AddrSetActivity extends BaseActivity<ActivityAddrSetBinding> {
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         viewModel.onDestroy();
     }

@@ -39,16 +39,6 @@ public interface MankoService {
 
     @POST("user/updateUserInfo")
     @FormUrlEncoded
-    Observable<SimpleModel<UploadFileBean>> loadImage(@Field("token") String token, @Field("file") File file);
-
-    @POST("appUserFriend/deleteFriendByJiGuang")
-    @FormUrlEncoded
-    Observable<SimpleModel<String>> deleFriendy(@Field("username") String username, @Field("friendUsername") String friendUsername);
-
-    @POST("appFriendApply/addFriendBack")
-    @FormUrlEncoded
-    Observable<SimpleModel<String>> addGreateFriendy(@Field("username") String usname,
-                                                     @Field("friendUsername")String friendUsername, @Field("friendRemark") String friendRemark);//同意添加好友
     Observable<SimpleModel<String>> updateUserInfo(
             @Field("userId") String userId,
             @Field("headIcon") String headIcon,
@@ -60,6 +50,15 @@ public interface MankoService {
             @Field("city") String city,
             @Field("backgroundImg") String backgroundImg
     );
+
+    @POST("appUserFriend/deleteFriendByJiGuang")
+    @FormUrlEncoded
+    Observable<SimpleModel<String>> deleFriendy(@Field("username") String username, @Field("friendUsername") String friendUsername);
+
+    @POST("appFriendApply/addFriendBack")
+    @FormUrlEncoded
+    Observable<SimpleModel<String>> addGreateFriendy(@Field("username") String usname,
+                                                     @Field("friendUsername")String friendUsername, @Field("friendRemark") String friendRemark);//同意添加好友
 
     @POST("user/updatePassword")
     @FormUrlEncoded

@@ -113,7 +113,7 @@ public class EditUserInfoActivity extends BaseActivity<ActivityEditUserinfoBindi
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         viewModel.onDestroy();
     }

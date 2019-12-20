@@ -63,7 +63,7 @@ public class UpdateNicknameActivity extends BaseActivity<ActivityUpdateNicknameB
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         viewModel.onDestroy();
     }

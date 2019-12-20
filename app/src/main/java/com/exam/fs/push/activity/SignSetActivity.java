@@ -63,7 +63,8 @@ public class SignSetActivity extends BaseActivity<ActivitySignSetBinding> {
         });
     }
 
-    protected void onDestroy() {
+    @Override
+    public void onDestroy() {
         super.onDestroy();
         viewModel.onDestroy();
     }

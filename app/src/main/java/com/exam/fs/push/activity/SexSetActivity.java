@@ -64,7 +64,7 @@ public class SexSetActivity extends BaseActivity<ActivitySexSetBinding> {
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         viewModel.onDestroy();
     }

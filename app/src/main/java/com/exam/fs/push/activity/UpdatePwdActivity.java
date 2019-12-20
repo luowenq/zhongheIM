@@ -75,9 +75,8 @@ public class UpdatePwdActivity extends BaseActivity<ActivityUpdatePwdBinding> {
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
-        viewModel.onDestroy();
     }
 
     @Override
