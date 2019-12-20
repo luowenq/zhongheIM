@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.activeandroid.ActiveAndroid;
@@ -31,6 +30,7 @@ import com.exam.fs.push.utils.SharePreferenceManager;
 import com.exam.fs.push.widget.SideBar;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -58,7 +58,6 @@ public class AddressFragment extends BaseFragment<FragmentAddressBinding> implem
     private LinearLayout mTime_ll;
     private TextView mGroup_verification_num;
     private TextView mNewFriendNum;
-    private ConstraintLayout layout;
     private StickyListAdapter mAdapter;
     private List<FriendEntry> mList = new ArrayList<>();
     private List<FriendEntry> forDelete = new ArrayList<>();
@@ -84,7 +83,8 @@ public class AddressFragment extends BaseFragment<FragmentAddressBinding> implem
         mTime_ll = header.findViewById(R.id.tim_ll);
         mGroup_verification_num = header.findViewById(R.id.group_verification_num);
         mNewFriendNum = header.findViewById(R.id.friend_verification_num);
-        layout = header.findViewById(R.id.layout_serson1);
+        View layout = header.findViewById(R.id.add_title_serson);
+        TextView layout1 = layout.findViewById(R.id.tv_serson);
         mGroup_verification_num.setVisibility(INVISIBLE);
         getBinding().listview.addHeaderView(header, null, false);
         getBinding().listview.setDrawingListUnderStickyHeader(true);
@@ -113,9 +113,28 @@ public class AddressFragment extends BaseFragment<FragmentAddressBinding> implem
         mVerify_ll.setOnClickListener(this);
         mGroup_ll.setOnClickListener(this);
         mTime_ll.setOnClickListener(this);
-        layout.setOnClickListener(this);
+        layout1.setOnClickListener(this);
         getBinding().sidebar.setOnTouchingLetterChangedListener(this);
         initContacts();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getBinding().sidebar.setVisibility(VISIBLE);
+        getBinding().listview.setVisibility(VISIBLE);
+        refreshContact();
+        //为搜索好友做准备
+        if (App.mFriendInfoList != null)
+            App.mFriendInfoList.clear();
+        ContactManager.getFriendList(new GetUserInfoListCallback() {
+            @Override
+            public void gotResult(int i, String s, List<UserInfo> list) {
+                if (i == 0) {
+                    App.mFriendInfoList = list;
+                }
+            }
+        });
     }
 
     //接收到好友事件
@@ -223,6 +242,23 @@ public class AddressFragment extends BaseFragment<FragmentAddressBinding> implem
         }
     }
 
+    public void onEventMainThread(Event event) {
+        if (event.getType() == EventType.addFriend) {
+            FriendRecommendEntry recommendEntry = FriendRecommendEntry.getEntry(event.getFriendId());
+            if (null != recommendEntry) {
+                FriendEntry friendEntry = FriendEntry.getFriend(recommendEntry.user,
+                        recommendEntry.username, recommendEntry.appKey);
+                if (null == friendEntry) {
+                    friendEntry = new FriendEntry(recommendEntry.uid, recommendEntry.username, recommendEntry.noteName, recommendEntry.nickName, recommendEntry.appKey,
+                            recommendEntry.avatar, recommendEntry.displayName,
+                            getLetter(recommendEntry.displayName), recommendEntry.user);
+                    friendEntry.save();
+                    refresh(friendEntry);
+                }
+            }
+        }
+    }
+
     private void refreshContact() {
         final UserEntry user = UserEntry.getUser(JMessageClient.getMyInfo().getUserName(),
                 JMessageClient.getMyInfo().getAppKey());
@@ -290,15 +326,25 @@ public class AddressFragment extends BaseFragment<FragmentAddressBinding> implem
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.verify_ll:
+            case R.id.verify_ll://新的朋友
+                ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_VERIFICATION_MESSAGE).navigation();
+                dismissNewFriends();
                 break;
-            case R.id.group_ll:
+            case R.id.group_ll://群聊
+                ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_GROUP).navigation();
                 break;
-            case R.id.tim_ll:
+            case R.id.tim_ll://风声团队
                 break;
-            case R.id.layout_serson1:
+            case R.id.tv_serson://搜索
                 break;
         }
+    }
+
+    public void dismissNewFriends() {
+        SharePreferenceManager.setCachedNewFriendNum(0);
+        App.forAddIntoGroup.clear();
+        App.forAddFriend.clear();
+        mNewFriendNum.setVisibility(INVISIBLE);
     }
 
     private void initContacts() {

@@ -80,6 +80,8 @@ public class AccountViewModel extends BaseFragmentViewModel implements ViewModel
                                 user = new UserEntry(username, appKey);
                                 user.save();
                             }
+                            ToastManager.showShort(context, R.string.app_success);
+                            BusFactory.getBus().post(new EventBusBean(EventBusBean.TAG_LOGIN_SUCCESS));
                             if (context instanceof Activity) {
                                 ((Activity) context).finish();
                             }

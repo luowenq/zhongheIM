@@ -63,4 +63,10 @@ public class RouterTables {
     public static final String PAGE_ACTIVITY_VARLY_FRIENDY = "/activity/varly/friendy";
     //聊天界面
     public static final String PAGE_ACTIVITY_CHAT = "/activity/chat";
+    //群聊
+    public static final String PAGE_ACTIVITY_GROUP = "/activity/group";
+    //新朋友
+    public static final String PAGE_ACTIVITY_VERIFICATION_MESSAGE = "/activity/verification/message";
+    public static final String PAGE_ACTIVITY_FRIEND_DETAIL = "/activity/search/friend/detail";
+    public static final String PAGE_ACTIVITY_GROUP_NOT_FRIEND = "/activity/group/not/friend";
 }

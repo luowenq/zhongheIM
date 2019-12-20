@@ -32,4 +32,14 @@ public class UserModel extends BaseModel {
         return Api.getMankoService().getUserInfo(token).compose(XApi.getObservableScheduler())
                 .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
+
+    public static Observable<SimpleModel<String>> gretea(String username, String friendyname, String mark) {
+        return Api.getMankoService().addGreateFriendy(username, friendyname, mark).compose(XApi.getObservableScheduler())
+                .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+    }
+
+    public static Observable<SimpleModel<String>> delte(String username, String friendyname) {
+        return Api.getMankoService().deleFriendy(username, friendyname).compose(XApi.getObservableScheduler())
+                .subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
+    }
 }

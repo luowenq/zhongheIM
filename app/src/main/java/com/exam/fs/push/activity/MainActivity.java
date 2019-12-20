@@ -9,6 +9,7 @@ import com.exam.fs.push.base.BaseActivity;
 import com.exam.fs.push.databinding.ActivityMainBinding;
 import com.exam.fs.push.eventbus.EventBusBean;
 import com.exam.fs.push.router.RouterTables;
+import com.exam.fs.push.utils.Config;
 import com.shizhefei.view.indicator.IndicatorViewPager;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -31,6 +32,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
         MainIndicatorViewPagerAdapter adapter = new MainIndicatorViewPagerAdapter(context, getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         viewPager.setPageOffscreenLimit(adapter.getCount());
+        assert Config.getUsers() != null;
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

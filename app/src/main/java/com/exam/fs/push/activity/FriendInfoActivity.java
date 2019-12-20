@@ -15,6 +15,8 @@ import com.exam.fs.push.R;
 import com.exam.fs.push.base.BaseActivity;
 import com.exam.fs.push.databinding.ActivityFriendInfoBinding;
 import com.exam.fs.push.db.FriendEntry;
+import com.exam.fs.push.model.bean.Event;
+import com.exam.fs.push.model.bean.EventType;
 import com.exam.fs.push.router.RouterTables;
 
 import org.greenrobot.eventbus.EventBus;
@@ -41,15 +43,17 @@ public class FriendInfoActivity extends BaseActivity<ActivityFriendInfoBinding> 
     public boolean mIsAddFriend = false;
     private UserInfo mUserInfo;
     private String mTitle;
+    public boolean mIsFromContact;
 
     @Override
     public void initData(Bundle bundle) {
         ARouter.getInstance().inject(this);
         initTitle(getBinding().titleView, "");
+        mIsFromContact = getIntent().getBooleanExtra("fromContact", false);
         if (mTargetAppKey == null) {
             mTargetAppKey = JMessageClient.getMyInfo().getAppKey();
         }
-        if (mIsAddFriend) {
+        if (mIsFromContact || mIsAddFriend) {
             updateUserInfo();
         } else {
             Conversation conv = JMessageClient.getSingleConversation(mTargetId, mTargetAppKey);
@@ -160,12 +164,10 @@ public class FriendInfoActivity extends BaseActivity<ActivityFriendInfoBinding> 
                     .withString(App.TARGET_APP_KEY, mTargetAppKey).navigation();
         }
         Conversation conv = JMessageClient.getSingleConversation(mTargetId, mTargetAppKey);
+        //如果会话为空，使用EventBus通知会话列表添加新会话
         if (conv == null) {
             conv = Conversation.createSingleConversation(mTargetId, mTargetAppKey);
-            /*EventBus.getDefault().post(new Event.Builder()
-                    .setType(EventType.createConversation)
-                    .setConversation(conv)
-                    .build());*/
+            EventBus.getDefault().post(new Event.Builder().setType(EventType.createConversation).setConversation(conv).build());
         }
     }
 

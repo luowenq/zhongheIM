@@ -18,7 +18,6 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:right_btn_text="@string/app_send"
             app:right_icon_res_ishow="false"
             app:right_text_ishow="false" />
 

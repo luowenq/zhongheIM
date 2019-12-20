@@ -27,7 +27,6 @@ import cn.jpush.im.api.BasicCallback;
  */
 @Route(path = RouterTables.PAGE_ACTIVITY_VARLY_FRIENDY)
 public class VarlyFriendyActivity extends BaseActivity<ActivityVarlyFriendyBinding> {
-    private String content;
     private UserInfo mMyInfo;
     private String mTargetAppKey;
 
@@ -113,7 +112,7 @@ public class VarlyFriendyActivity extends BaseActivity<ActivityVarlyFriendyBindi
 
     @SuppressLint("WrongConstant")
     private void initView() {
-        initTitle(getBinding().titleView, "验证消息", "发送",v -> sendAddReason());
+        initTitle(getBinding().titleView, "好友验证", "发送",v -> sendAddReason());
         mMyInfo = JMessageClient.getMyInfo();
         mTargetAppKey = mMyInfo.getAppKey();
         String name;

@@ -14,10 +14,17 @@ import androidx.databinding.ViewDataBinding;
 
 import com.exam.fs.push.dialog.LoadingDialog;
 import com.exam.fs.push.dialog.LoadingDialogManager;
+import com.exam.fs.push.utils.FileHelper;
+import com.exam.fs.push.utils.SharePreferenceManager;
 import com.exam.fs.push.widget.TitleView;
+
+import java.io.File;
 
 import cn.droidlover.xdroid.base.XActivity;
 import cn.droidlover.xdroidbase.router.Router;
+import cn.jpush.im.android.api.JMessageClient;
+import cn.jpush.im.android.api.event.LoginStateChangeEvent;
+import cn.jpush.im.android.api.model.UserInfo;
 import me.shihao.library.XStatusBarHelper;
 
 public abstract class BaseActivity<V extends ViewDataBinding> extends XActivity<V> {
@@ -29,6 +36,25 @@ public abstract class BaseActivity<V extends ViewDataBinding> extends XActivity<
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         LoadingDialogManager.getInstance().setDialog(new LoadingDialog(this));//设置加载dialog
         super.onCreate(savedInstanceState);
+        //注册sdk的event用于接收各种event事件
+        JMessageClient.registerEventReceiver(this);
+    }
+
+    public void onEventMainThread(LoginStateChangeEvent event) {
+        final LoginStateChangeEvent.Reason reason = event.getReason();
+        UserInfo myInfo = event.getMyInfo();
+        if (myInfo != null) {
+            String path;
+            File avatar = myInfo.getAvatarFile();
+            if (avatar != null && avatar.exists()) {
+                path = avatar.getAbsolutePath();
+            } else {
+                path = FileHelper.getUserAvatarPath(myInfo.getUserName());
+            }
+            SharePreferenceManager.setCachedUsername(myInfo.getUserName());
+            SharePreferenceManager.setCachedAvatarPath(path);
+            JMessageClient.logout();
+        }
     }
 
     @Override
@@ -38,6 +64,13 @@ public abstract class BaseActivity<V extends ViewDataBinding> extends XActivity<
             LoadingDialogManager.getInstance().setDialog(new LoadingDialog(this));
         }
         isFirst = true;
+    }
+
+    @Override
+    public void onDestroy() {
+        //注销消息接收
+        JMessageClient.unRegisterEventReceiver(this);
+        super.onDestroy();
     }
 
     protected void initTitle(TitleView titleView, String title) {
