@@ -112,4 +112,10 @@
     </style>
 
     <style name="grid_view" parent="@android:style/Widget.GridView"/>
+
+    <style name="line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/color_f4f4f4</item>
+    </style>
 </resources>

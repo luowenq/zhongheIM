@@ -17,7 +17,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:right_btn_isShow="false"
-            app:right_icon_res_ishow="false"
+            app:right_icon_res="@drawable/icon_top_right_more"
+            app:right_icon_res_ishow="true"
             app:right_text_ishow="false" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

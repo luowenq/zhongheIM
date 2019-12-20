@@ -2,7 +2,6 @@ package com.exam.fs.push.activity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.exam.fs.push.R;
@@ -58,8 +57,7 @@ public class SexSetActivity extends BaseActivity<ActivitySexSetBinding> {
         }
 
         getBinding().titleView.getRightButton().setOnClickListener(v -> {
-            viewModel.updateUserInfo("","","","",getBinding().btnMan.getRightImageView().isSelected()?"1":"2"
-            ,"","","",true);
+            viewModel.updateUserInfo("","","","",getBinding().btnMan.getRightImageView().isSelected()?"1":"2","","",true);
         });
     }
 

@@ -177,6 +177,16 @@
     <string name="app_service_manager">服务管理</string>
     <string name="app_no_function">功能暂未开放</string>
     <string name="app_del_wechat_pay">注销微信支付</string>
+    <string name="app_see_all_group_member">查看全部群成员</string>
+    <string name="app_group_name">群聊名称</string>
+    <string name="app_group_qr_code">群二维码</string>
+    <string name="app_group_notice">群公告</string>
+    <string name="app_group_chat_record">聊天记录</string>
+    <string name="app_group_chat_message_free">消息免打扰</string>
+    <string name="app_group_chat_top">聊天置顶</string>
+    <string name="app_group_my_nickname">我在本群的昵称</string>
+    <string name="app_group_display_nickname">显示群成员昵称</string>
+    <string name="app_group_delete_out">删除并退出</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -9,8 +9,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 public class UpdatePwdModel {
-    public static Observable<SimpleModel<String>> updatePassword(String userId, String oldPassword,String newPassword,String checkNewPassword){
-        return Api.getMankoService().updatePassword(userId,oldPassword,newPassword,checkNewPassword)
+    public static Observable<SimpleModel<String>> updatePassword(String userName, String oldPassword,String newPassword,String checkNewPassword){
+        return Api.getMankoService().updatePassword(userName,oldPassword,newPassword,checkNewPassword)
                 .compose(XApi.getObservableScheduler()).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
 }

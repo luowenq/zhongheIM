@@ -23,9 +23,9 @@ public class EditUserInfoModel {
                 .compose(XApi.getObservableScheduler()).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
 
-    public static Observable<SimpleModel<String>> updateUserInfo(String userId,String headIcon,String sign,
-                                                                 String eMail,String nickname,String sex,String province,String city,String backgroundImg){
-        return Api.getMankoService().updateUserInfo(userId,headIcon,sign,eMail,nickname,sex,province,city,backgroundImg)
+    public static Observable<SimpleModel<String>> updateUserInfo(String userName,String headIcon,String birthday,String sign,
+                                                                 String nickname,String sex,String province,String city){
+        return Api.getMankoService().updateUserInfo(userName,headIcon,birthday,sign,nickname,sex,province,city)
                 .compose(XApi.getObservableScheduler()).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
 }

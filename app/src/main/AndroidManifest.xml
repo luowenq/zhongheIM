@@ -162,6 +162,9 @@
         <activity
             android:name=".activity.PayManagerActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChatGroupManagerActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

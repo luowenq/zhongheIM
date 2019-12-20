@@ -58,7 +58,7 @@ public class UpdateNicknameActivity extends BaseActivity<ActivityUpdateNicknameB
                 ToastManager.showShort(this,"请输入昵称");
                 return;
             }
-            viewModel.updateUserInfo("","","",nickName,"","","","",true);
+            viewModel.updateUserInfo("","","",nickName,"","","",true);
         });
     }
 

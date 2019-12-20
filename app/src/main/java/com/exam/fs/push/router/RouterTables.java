@@ -69,4 +69,6 @@ public class RouterTables {
     public static final String PAGE_ACTIVITY_VERIFICATION_MESSAGE = "/activity/verification/message";
     public static final String PAGE_ACTIVITY_FRIEND_DETAIL = "/activity/search/friend/detail";
     public static final String PAGE_ACTIVITY_GROUP_NOT_FRIEND = "/activity/group/not/friend";
+    //群聊管理页面（群聊天详情）
+    public static final String PAGE_ACTIVITY_CHAT_GROUP_MANAGER = "/activity/chat/group/manager";
 }

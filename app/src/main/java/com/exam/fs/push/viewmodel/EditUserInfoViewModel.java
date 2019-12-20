@@ -55,14 +55,14 @@ public class EditUserInfoViewModel extends BaseActivityViewModel implements View
                 urlImage = model.content.fileName;
             }
             Log.e(TAG, "uploadImage: "+urlImage);
-            updateUserInfo(urlImage,"","","","","","","",false);
+            updateUserInfo(urlImage,"","","","","","",false);
 //            return EditUserInfoModel.updateUserInfo(Config.getToken(),Config.getUsers().id,urlImage,"","","","","","","");
             return Observer::onComplete;
         }).compose(XApi.getObservableScheduler()).subscribe(uploadFileObserver);
     }
 
-    public void updateUserInfo(String headIcon, String sign, String eMail, String nickname, String sex, String province,
-                               String city, String backgroundImg,boolean isFinish){
+    public void updateUserInfo(String headIcon,String birthday, String sign, String nickname, String sex, String province,
+                               String city, boolean isFinish){
         if (simpleObserver != null && simpleObserver.isDisposed())
             simpleObserver.dispose();
         simpleObserver = new SimpleObserver<SimpleModel<String>>() {
@@ -75,14 +75,13 @@ public class EditUserInfoViewModel extends BaseActivityViewModel implements View
         if(userModel == null){
             return;
         }
-        EditUserInfoModel.updateUserInfo(userModel.id,TextUtils.isEmpty(headIcon)?userModel.headIcon:headIcon,
+        EditUserInfoModel.updateUserInfo(userModel.username,TextUtils.isEmpty(headIcon)?userModel.headIcon:headIcon,
+                birthday,
                 TextUtils.isEmpty(sign)?userModel.sign:sign,
-                eMail,
                 TextUtils.isEmpty(nickname)?userModel.nickname:nickname,
                 TextUtils.isEmpty(sex)?userModel.sex:sex,
                 TextUtils.isEmpty(province)?userModel.province:province,
-                TextUtils.isEmpty(city)?userModel.city:city,
-                backgroundImg).flatMap((Function<SimpleModel<String>
+                TextUtils.isEmpty(city)?userModel.city:city).flatMap((Function<SimpleModel<String>
                 , ObservableSource<SimpleModel<String>>>) model -> {
             if (model.msg.equals("0")) {
                 ToastManager.showShort(AppUtils.getAppContext(), R.string.app_update_userinfo_success);

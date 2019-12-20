@@ -19,13 +19,9 @@
             tools:ignore="ContentDescription" />
         <TextView
             android:id="@+id/tv_left"
-            android:textStyle="bold"
-            android:textSize="@dimen/font_16"
+            style="@style/boldTextView"
             android:layout_centerVertical="true"
-            android:textColor="@color/color_666666"
             android:layout_toEndOf="@+id/img_left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             tools:ignore="RelativeOverlap" />
 
         <TextView
@@ -34,6 +30,7 @@
             android:textColor="@color/color_999999"
             android:maxLines="1"
             android:gravity="right"
+            android:textStyle="bold"
             android:layout_marginStart="@dimen/len_116"
             android:layout_toStartOf="@+id/ll_right"
             android:layout_centerVertical="true"

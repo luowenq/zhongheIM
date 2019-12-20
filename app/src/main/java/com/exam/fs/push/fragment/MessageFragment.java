@@ -37,6 +37,7 @@ public class MessageFragment extends BaseFragment<FragmentMessageBinding> {
             dialog.setOnItemsClickListener(text -> {
                 switch (text) {
                     case "发起群聊":
+                        ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_CHAT_GROUP_MANAGER).navigation();
                         break;
                     case "添加好友":
                         ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_ADD_FRIENDY).navigation();

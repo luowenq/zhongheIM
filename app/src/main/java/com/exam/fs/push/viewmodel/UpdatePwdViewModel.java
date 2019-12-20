@@ -58,7 +58,7 @@ public class UpdatePwdViewModel extends BaseFragmentViewModel implements ViewMod
         if(userModel == null){
             return;
         }
-        UpdatePwdModel.updatePassword(userModel.id,oldPassword,newPassword,checkNewPassword).flatMap((Function<SimpleModel<String>
+        UpdatePwdModel.updatePassword(userModel.username,oldPassword,newPassword,checkNewPassword).flatMap((Function<SimpleModel<String>
                 , ObservableSource<SimpleModel<String>>>) model -> {
             if (model.msg.equals("0")) {
                 ToastManager.showShort(AppUtils.getAppContext(), R.string.app_update_pwd_success);

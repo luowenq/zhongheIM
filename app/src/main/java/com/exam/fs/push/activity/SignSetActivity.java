@@ -59,7 +59,7 @@ public class SignSetActivity extends BaseActivity<ActivitySignSetBinding> {
                 ToastManager.showShort(this,"请输入签名");
                 return;
             }
-            viewModel.updateUserInfo("",sign,"","","","","","",true);
+            viewModel.updateUserInfo("","",sign,"","","","",true);
         });
     }
 

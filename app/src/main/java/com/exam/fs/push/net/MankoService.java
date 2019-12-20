@@ -40,15 +40,14 @@ public interface MankoService {
     @POST("user/updateUserInfo")
     @FormUrlEncoded
     Observable<SimpleModel<String>> updateUserInfo(
-            @Field("userId") String userId,
+            @Field("username") String username,
             @Field("headIcon") String headIcon,
+            @Field("birthday") String birthday,
             @Field("sign") String sign,
-            @Field("eMail") String eMail,
             @Field("nickname") String nickname,
             @Field("sex") String sex,
             @Field("province") String province,
-            @Field("city") String city,
-            @Field("backgroundImg") String backgroundImg
+            @Field("city") String city
     );
 
     @POST("appUserFriend/deleteFriendByJiGuang")
@@ -63,7 +62,7 @@ public interface MankoService {
     @POST("user/updatePassword")
     @FormUrlEncoded
     Observable<SimpleModel<String>> updatePassword(
-            @Field("userId") String userId,
+            @Field("username") String userId,
             @Field("oldPassword") String oldPassword,
             @Field("newPassword") String newPassword,
             @Field("checkNewPassword") String checkNewPassword

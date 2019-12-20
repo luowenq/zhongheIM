@@ -117,9 +117,9 @@ public class ShowInfoView extends BaseConstraintLayoutView<ViewShowInfoBinding> 
             /** 左边图标*/
             leftIcon = array.getDrawable(R.styleable.ShowInfoView_left_icon);
             /** 左边padding*/
-            leftPadding = array.getDimension(R.styleable.ShowInfoView_left_padding, 16);
+            leftPadding = array.getDimension(R.styleable.ShowInfoView_left_padding, getResources().getDimension(R.dimen.len_16));
             /** 左边文字和icon的margin*/
-            leftDrawMargin = array.getDimension(R.styleable.ShowInfoView_left_draw_margin, 10);
+            leftDrawMargin = array.getDimension(R.styleable.ShowInfoView_left_draw_margin, getResources().getDimension(R.dimen.len_10));
             /** 左边文字大小*/
             leftTextSize = array.getDimension(R.styleable.ShowInfoView_left_text_size, 0);
             /** 左边文字颜色*/
@@ -135,11 +135,11 @@ public class ShowInfoView extends BaseConstraintLayoutView<ViewShowInfoBinding> 
             /** 右边icon*/
             rightIcon = array.getDrawable(R.styleable.ShowInfoView_right_icon);
             /** 右边padding*/
-            rightPadding = array.getDimension(R.styleable.ShowInfoView_right_padding, 16);
+            rightPadding = array.getDimension(R.styleable.ShowInfoView_right_padding, getResources().getDimension(R.dimen.len_16));
             /** 右边icon和文字的距离*/
-            rightIconMargin = array.getDimension(R.styleable.ShowInfoView_right_icon_margin, 10);
+            rightIconMargin = array.getDimension(R.styleable.ShowInfoView_right_icon_margin, getResources().getDimension(R.dimen.len_10));
             /** 右边文字距离左边文字的距离*/
-            rightTextLeftMargin = array.getDimension(R.styleable.ShowInfoView_right_text_left_margin, 120);
+            rightTextLeftMargin = array.getDimension(R.styleable.ShowInfoView_right_text_left_margin, getResources().getDimension(R.dimen.len_116));
             /** 右边icon是否显示*/
             rightIconIsShow = array.getBoolean(R.styleable.ShowInfoView_right_icon_is_show, false);
             /** 右边文字是显示*/
@@ -210,12 +210,12 @@ public class ShowInfoView extends BaseConstraintLayoutView<ViewShowInfoBinding> 
 
     public void setLeftIconMargin(float margin) {
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) getBinding().imgLeft.getLayoutParams();
-        layoutParams.setMargins(0, 0, Kits.Dimens.dpToPxInt(context, margin), 0);
+        layoutParams.setMargins(0, 0, (int) margin, 0);
         getBinding().imgLeft.setLayoutParams(layoutParams);
     }
 
     public void setPaddingView(float paddingLeft, float paddingRight) {
-        getBinding().llBg.setPadding(Kits.Dimens.dpToPxInt(context, paddingLeft), 0, Kits.Dimens.dpToPxInt(context, paddingRight), 0);
+        getBinding().llBg.setPadding((int) paddingLeft, 0, (int) paddingRight, 0);
     }
 
     public void setRightIcon(Drawable icon) {
@@ -253,13 +253,13 @@ public class ShowInfoView extends BaseConstraintLayoutView<ViewShowInfoBinding> 
 
     public void setRightIconMargin(float rightIconMargin) {
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) getBinding().imgRight.getLayoutParams();
-        layoutParams.setMargins(Kits.Dimens.dpToPxInt(context, rightIconMargin), 0, 0, 0);
+        layoutParams.setMargins((int) rightIconMargin, 0, 0, 0);
         getBinding().imgRight.setLayoutParams(layoutParams);
     }
 
     public void setRightTextLeftMargin(float rightTextLeftMargin) {
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) getBinding().tvRight.getLayoutParams();
-        layoutParams.setMargins(Kits.Dimens.dpToPxInt(context, rightTextLeftMargin), 0, 0, 0);
+        layoutParams.setMargins((int) rightTextLeftMargin, 0, 0, 0);
         getBinding().tvRight.setLayoutParams(layoutParams);
     }
 

@@ -55,8 +55,7 @@ public class AddrSetActivity extends BaseActivity<ActivityAddrSetBinding> {
             @Override
             public void onItemClick(int position, CityBean.AreaBean model) {
                 super.onItemClick(position, model);
-                viewModel.updateUserInfo("","","","",""
-                        ,province,model.getName(),"",true);
+                viewModel.updateUserInfo("","","","","",province,model.getName(),true);
             }
         });
         ProvinceAdapter provinceAdapter = new ProvinceAdapter(this,cityBeans);

@@ -67,7 +67,7 @@ public class AccountViewModel extends BaseFragmentViewModel implements ViewModel
                     Config.setUser(model.content);
                     Log.e("EditUserInfoViewModel",new Gson().toJson(model));
                     ToastManager.showShort(context, R.string.app_success);
-                    BusFactory.getBus().post(new EventBusBean(EventBusBean.TAG_LOGIN_SUCCESS));
+//                    BusFactory.getBus().post(new EventBusBean(EventBusBean.TAG_LOGIN_SUCCESS));
                     JMessageClient.login(model.content.username, model.content.password, new BasicCallback() {
                         @Override
                         public void gotResult(int i, String s) {
