@@ -1,6 +1,7 @@
 package com.exam.fs.push.fragment;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.fragment.app.Fragment;
 
@@ -15,6 +16,7 @@ import com.exam.fs.push.router.RouterTables;
 import com.exam.fs.push.utils.Config;
 import com.exam.fs.push.utils.LoadImage;
 import com.exam.fs.push.utils.LoginOut;
+import com.exam.fs.push.utils.ToastUtils;
 import com.exam.fs.push.viewmodel.MineViewModel;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -27,7 +29,7 @@ import me.shihao.library.XStatusBarHelper;
  * 我的
  * A simple {@link Fragment} subclass.
  */
-public class MinFragment extends BaseFragment<FragmentMinBinding> {
+public class MinFragment extends BaseFragment<FragmentMinBinding>{
     private static final String TAG = "MinFragment";
     private MineViewModel viewModel;
 
@@ -58,25 +60,21 @@ public class MinFragment extends BaseFragment<FragmentMinBinding> {
         getBinding().btnSetting.setOnClickListener(v -> {
             ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_SETTING).navigation();
         });
-        getBinding().btnPay.setOnClickListener(v -> {
+
+        View.OnClickListener onClickListener = view ->{
 //            ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_PAY).navigation();
-            ToastManager.showShort(context,R.string.app_no_function);
-        });
-        getBinding().btnCollection.setOnClickListener(v -> {
-            ToastManager.showShort(context,R.string.app_no_function);
-        });
-        getBinding().btnPics.setOnClickListener(v -> {
-            ToastManager.showShort(context,R.string.app_no_function);
-        });
-        getBinding().btnBiaoqing.setOnClickListener(v -> {
-            ToastManager.showShort(context,R.string.app_no_function);
-        });
+            ToastUtils.showShort(R.string.app_no_function);
+        };
+        getBinding().btnPay.setOnClickListener(onClickListener);
+        getBinding().btnCollection.setOnClickListener(onClickListener);
+        getBinding().btnPics.setOnClickListener(onClickListener);
+        getBinding().btnBiaoqing.setOnClickListener(onClickListener);
         getBinding().btnLoginOut.setOnClickListener(v -> {
             LoginOut.loginOut();
             context.finish();
         });
         getBinding().btnChangeAccount.setOnClickListener(v -> {
-
+            ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_CHANGE_ACCOUNT).navigation();
         });
     }
 
@@ -114,4 +112,5 @@ public class MinFragment extends BaseFragment<FragmentMinBinding> {
         super.onDestroy();
         viewModel.onDestroy();
     }
+
 }

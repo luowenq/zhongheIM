@@ -1,6 +1,7 @@
 package com.exam.fs.push.activity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
@@ -9,9 +10,12 @@ import com.exam.fs.push.base.BaseActivity;
 import com.exam.fs.push.databinding.ActivitySettingBinding;
 import com.exam.fs.push.eventbus.EventBusBean;
 import com.exam.fs.push.router.RouterTables;
+import com.exam.fs.push.utils.ToastUtils;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+
+import cn.droidlover.xdroidbase.kit.ToastManager;
 
 /**
  * 设置
@@ -25,21 +29,16 @@ public class SettingActivity extends BaseActivity<ActivitySettingBinding> {
         getBinding().btnSafe.setOnClickListener(view -> {
             ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_ACCOUNT_SAFE).navigation();
         });
-        getBinding().btnMessageNotice.setOnClickListener(view -> {
-            ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_MESSAGE_NOTICE).navigation();
-        });
-        getBinding().btnStatic.setOnClickListener(view -> {
-            ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_QUIET_HOURS).navigation();
-        });
-        getBinding().btnChat.setOnClickListener(view -> {
-            ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_CHAT_SET).navigation();
-        });
-        getBinding().btnPrivacy.setOnClickListener(view -> {
-            ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_PRIVACY).navigation();
-        });
-        getBinding().btnCurrency.setOnClickListener(view -> {
-            ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_CURRENCY).navigation();
-        });
+
+        View.OnClickListener onClickListener = view ->{
+            ToastUtils.showShort(R.string.app_no_function);
+//            ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_QUIET_HOURS).navigation();
+        };
+        getBinding().btnMessageNotice.setOnClickListener(onClickListener);
+        getBinding().btnStatic.setOnClickListener(onClickListener);
+        getBinding().btnChat.setOnClickListener(onClickListener);
+        getBinding().btnPrivacy.setOnClickListener(onClickListener);
+        getBinding().btnCurrency.setOnClickListener(onClickListener);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

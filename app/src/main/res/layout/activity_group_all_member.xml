@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.exam.fs.push.widget.TitleView
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:left_ico_back="true"
+            app:right_btn_isShow="false"
+            app:right_icon_res_ishow="false"
+            app:right_text_ishow="false" />
+        <ImageView
+            android:id="@+id/img_serch_icon"
+            android:src="@drawable/icon_img_serch"
+            app:layout_constraintTop_toBottomOf="@+id/titleView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="@dimen/len_16"
+            android:layout_marginBottom="@dimen/len_10"
+            android:layout_marginLeft="@dimen/len_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/et_nickname"
+            app:layout_constraintTop_toBottomOf="@+id/titleView"
+            app:layout_constraintStart_toEndOf="@+id/img_serch_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/len_10"
+            android:background="@color/trans"
+            android:hint="@string/app_serson"
+            android:textColorHint="@color/color_cccccc"
+            android:textColor="@color/color_666666"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_height="@dimen/len_44"/>
+        <View
+            android:id="@+id/line"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_nickname"
+            style="@style/line"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_group_member"
+            android:layout_width="match_parent"
+            android:paddingStart="@dimen/len_16"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingBottom="@dimen/len_10"
+            app:layout_constraintTop_toBottomOf="@+id/line"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

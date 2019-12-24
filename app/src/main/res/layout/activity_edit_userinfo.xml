@@ -10,7 +10,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@color/white"
+        android:background="@color/color_f4f4f4"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <com.exam.fs.push.widget.TitleView
@@ -24,6 +24,7 @@
             app:right_text_ishow="false" />
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/btn_head"
+            android:background="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/titleView"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_width="match_parent"

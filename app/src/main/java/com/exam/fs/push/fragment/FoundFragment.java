@@ -9,9 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.exam.fs.push.R;
 import com.exam.fs.push.base.BaseFragment;
 import com.exam.fs.push.databinding.FragmentFoundBinding;
+import com.exam.fs.push.router.RouterTables;
 
 /**
  * 发现
@@ -33,6 +35,10 @@ public class FoundFragment extends BaseFragment<FragmentFoundBinding> {
     @Override
     public void initData(Bundle bundle) {
         initTitle(getBinding().titleView, "发现");
+
+        getBinding().btnWechatMoments.setOnClickListener(v -> {
+            ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_WECHAT_MOMENTS).navigation();
+        });
     }
 
     @Override

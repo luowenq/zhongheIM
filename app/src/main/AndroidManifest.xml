@@ -35,7 +35,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
         <activity android:name=".activity.GroupNotFriendActivity"></activity>
         <activity android:name=".activity.SearchFriendDetailActivity" />
         <activity
@@ -164,6 +164,21 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ChatGroupManagerActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.EditGroupNoticeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.GroupNoticieActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.GroupAllMemberActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.ChangeAccountActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.WechatMomentsActivity"
             android:screenOrientation="portrait"/>
     </application>
 

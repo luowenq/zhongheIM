@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/shape_left_right_radios_14dp_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/btn_camera"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/len_10"
+            android:layout_marginEnd="@dimen/len_10"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_60">
+            <TextView
+                android:text="@string/app_camera"
+                style="@style/boldTextView"/>
+            <TextView
+                android:text="@string/app_pic_video"
+                android:textSize="@dimen/font_12"
+                android:textColor="@color/color_bbbbbb"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+        </LinearLayout>
+        <View
+            style="@style/line"/>
+        <TextView
+            android:id="@+id/btn_from_file"
+            android:text="@string/app_from_file"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            style="@style/boldTextView"/>
+        <View
+            style="@style/line"/>
+        <TextView
+            android:id="@+id/btn_words_content"
+            android:text="@string/app_words_content"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            style="@style/boldTextView"/>
+        <View
+            android:layout_height="@dimen/len_4"
+            style="@style/line"/>
+        <TextView
+            android:id="@+id/btn_cancel"
+            android:text="@string/app_cancel"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"
+            style="@style/boldTextView"/>
+    </LinearLayout>
+</layout>

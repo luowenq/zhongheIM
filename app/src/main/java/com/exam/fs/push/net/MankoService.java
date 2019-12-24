@@ -67,4 +67,5 @@ public interface MankoService {
             @Field("newPassword") String newPassword,
             @Field("checkNewPassword") String checkNewPassword
     );
+
 }

@@ -71,4 +71,14 @@ public class RouterTables {
     public static final String PAGE_ACTIVITY_GROUP_NOT_FRIEND = "/activity/group/not/friend";
     //群聊管理页面（群聊天详情）
     public static final String PAGE_ACTIVITY_CHAT_GROUP_MANAGER = "/activity/chat/group/manager";
+    //群公告编辑
+    public static final String PAGE_ACTIVITY_EDIT_GROUP_NOTICE = "/activity/edit/group/notice";
+    //群公告
+    public static final String PAGE_ACTIVITY_GROUP_NOTICE = "/activity/group/notice";
+    //全部群成员
+    public static final String PAGE_ACTIVITY_GROUP_ALL_MEMBER = "/activity/group/all/member";
+    //切换账号
+    public static final String PAGE_ACTIVITY_CHANGE_ACCOUNT = "/activity/change/account";
+    //朋友圈
+    public static final String PAGE_ACTIVITY_WECHAT_MOMENTS = "/activity/wechat/moments";
 }

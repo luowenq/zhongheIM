@@ -111,11 +111,26 @@
         <item name="android:textColor">@color/color_666666</item>
     </style>
 
+    <style name="SingleRowTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/color_666666</item>
+        <item name="android:layout_marginEnd">@dimen/len_16</item>
+        <item name="android:layout_marginStart">@dimen/len_10</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
     <style name="grid_view" parent="@android:style/Widget.GridView"/>
 
     <style name="line">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:background">@color/color_f4f4f4</item>
+    </style>
+    <style name="ClubToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">0dp</item><!-- 设置该属性解决空白部分-->
     </style>
 </resources>

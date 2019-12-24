@@ -163,6 +163,8 @@
     <string name="app_edit_new_nickname">请输入新昵称</string>
     <string name="app_edit_sign">说点什么吧</string>
     <string name="app_sing_max_length">50</string>
+    <string name="app_edit_group_notice_max_length">150</string>
+    <string name="app_edit_group_notice_max_length_toast">内容最大不能超过150个字符</string>
     <string name="app_receivables_payment">收付款</string>
     <string name="app_wallet">钱包</string>
     <string name="app_service">服务</string>
@@ -187,6 +189,18 @@
     <string name="app_group_my_nickname">我在本群的昵称</string>
     <string name="app_group_display_nickname">显示群成员昵称</string>
     <string name="app_group_delete_out">删除并退出</string>
+    <string name="app_publish">发布</string>
+    <string name="app_only_group_up_edit">仅群主可编辑</string>
+    <string name="app_chang_account">轻触头像以切换账号</string>
+    <string name="app_shake">摇一摇</string>
+    <string name="app_shopping">购物</string>
+    <string name="app_game">游戏中心</string>
+    <string name="app_reply">回复</string>
+    <string name="app_camera">拍摄</string>
+    <string name="app_pic_video">照片或视频</string>
+    <string name="app_from_file">从手机相册选择</string>
+    <string name="app_words_content">文字内容</string>
+    <string name="app_cancel">取消</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

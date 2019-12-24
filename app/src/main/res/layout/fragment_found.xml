@@ -7,6 +7,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -20,7 +21,66 @@
             app:right_text_ishow="true"
             app:right_btn_isShow="false"
             app:right_icon_res_ishow="true" />
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_wechat_moments"
+            app:right_icon="@drawable/icon_right_black_more"
+            app:left_icon="@drawable/icon_wechat_moments"
+            app:left_text="@string/app_pyq"
+            app:layout_constraintTop_toBottomOf="@+id/titleView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"/>
 
+        <View
+            android:id="@+id/line1"
+            android:layout_height="@dimen/len_10"
+            app:layout_constraintTop_toBottomOf="@+id/btn_wechat_moments"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/line"/>
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_scan"
+            app:right_icon="@drawable/icon_right_black_more"
+            app:left_icon="@drawable/icon_scan"
+            app:left_text="@string/app_saoyisao"
+            app:layout_constraintTop_toBottomOf="@+id/line1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"/>
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_shake"
+            app:right_icon="@drawable/icon_right_black_more"
+            app:left_icon="@drawable/icon_shake"
+            app:left_text="@string/app_shake"
+            app:layout_constraintTop_toBottomOf="@+id/btn_scan"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"/>
+
+        <View
+            android:id="@+id/line2"
+            android:layout_height="@dimen/len_10"
+            app:layout_constraintTop_toBottomOf="@+id/btn_shake"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/line"/>
+
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_shopping"
+            app:right_icon="@drawable/icon_right_black_more"
+            app:left_icon="@drawable/icon_shoping"
+            app:left_text="@string/app_shake"
+            app:layout_constraintTop_toBottomOf="@+id/line2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"/>
+        <com.exam.fs.push.widget.ShowInfoView
+            android:id="@+id/btn_game"
+            app:right_icon="@drawable/icon_right_black_more"
+            app:left_icon="@drawable/icon_game"
+            app:left_text="@string/app_game"
+            app:layout_constraintTop_toBottomOf="@+id/btn_shopping"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
