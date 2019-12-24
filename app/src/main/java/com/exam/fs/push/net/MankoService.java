@@ -62,7 +62,7 @@ public interface MankoService {
     @POST("user/updatePassword")
     @FormUrlEncoded
     Observable<SimpleModel<String>> updatePassword(
-            @Field("username") String userId,
+            @Field("username") String username,
             @Field("oldPassword") String oldPassword,
             @Field("newPassword") String newPassword,
             @Field("checkNewPassword") String checkNewPassword
