@@ -1,9 +1,7 @@
 package com.exam.fs.push.utils;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.text.TextUtils;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
 
