@@ -1,11 +1,15 @@
 package com.exam.fs.push.activity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.exam.fs.push.R;
 import com.exam.fs.push.adapter.WechatMomentsAdapter;
 import com.exam.fs.push.base.BaseActivity;
@@ -16,12 +20,15 @@ import com.exam.fs.push.model.bean.WechatMomentsBean;
 import com.exam.fs.push.net.Api;
 import com.exam.fs.push.router.RouterTables;
 import com.exam.fs.push.utils.Config;
+import com.exam.fs.push.utils.GlideEngine;
 import com.exam.fs.push.utils.LoadImage;
+import com.luck.picture.lib.PictureSelector;
+import com.luck.picture.lib.config.PictureConfig;
+import com.luck.picture.lib.config.PictureMimeType;
+import com.luck.picture.lib.entity.LocalMedia;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import cn.droidlover.xdroidbase.kit.ToastManager;
 
 /**
  * 朋友圈
@@ -30,6 +37,7 @@ import cn.droidlover.xdroidbase.kit.ToastManager;
 public class WechatMomentsActivity extends BaseActivity<ActivityWechatMomentsBinding> {
     private List<WechatMomentsBean> list = new ArrayList<>();
     private WechatPublishDialog dialog;
+    private List<LocalMedia> selectList = new ArrayList<>();
 
     @SuppressLint("Range")
     @Override
@@ -102,8 +110,51 @@ public class WechatMomentsActivity extends BaseActivity<ActivityWechatMomentsBin
             if(dialog == null){
                 dialog = new WechatPublishDialog(this);
             }
+            dialog.setOnClickListener(v1 -> {
+                selectList.clear();
+                switch (v1.getId()){
+                    case R.id.btn_camera:
+                        //打开拍照
+                        PictureSelector.create(this)
+                                .openCamera(PictureMimeType.ofAll())
+                                .selectionMode(PictureConfig.SINGLE)
+                                .previewImage(true)// 是否可预览图片 true or false
+                                .compress(true)
+                                .loadImageEngine(GlideEngine.createGlideEngine())
+                                .forResult(PictureConfig.REQUEST_CAMERA);
+                        break;
+                    case R.id.btn_from_file:
+                        //打开文件选择
+                        PictureSelector.create(this)
+                                .openGallery(PictureMimeType.ofAll())
+                                .selectionMode(PictureConfig.MULTIPLE)
+                                .maxSelectNum(9)
+                                .previewImage(true)// 是否可预览图片 true or false
+                                .compress(true)
+                                .loadImageEngine(GlideEngine.createGlideEngine())
+                                .forResult(PictureConfig.CHOOSE_REQUEST);
+                        break;
+                    case R.id.btn_words_content:
+                        ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_PUBLISH_WECHAT).withParcelableArrayList("imgs", (ArrayList<? extends Parcelable>) selectList).navigation();
+                        break;
+                }
+            });
             dialog.show();
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case PictureConfig.CHOOSE_REQUEST:
+                case PictureConfig.REQUEST_CAMERA:
+                    selectList.addAll(PictureSelector.obtainMultipleResult(data));
+                    ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_PUBLISH_WECHAT).withParcelableArrayList("imgs", (ArrayList<? extends Parcelable>) selectList).navigation();
+                    break;
+            }
+        }
     }
 
     @Override

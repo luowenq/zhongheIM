@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -8,11 +9,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="@dimen/dp122"
         android:layout_height="@dimen/dp122">
-        <ImageView
+        <com.exam.fs.push.widget.CircleImageView
             android:id="@+id/img_pic"
-            android:scaleType="fitXY"
             android:layout_marginTop="@dimen/len_6"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:baselib_corner_type="ALL"
+            app:baselib_corner_radius="@dimen/len_4"
+            android:layout_centerInParent="true"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

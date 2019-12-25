@@ -13,6 +13,7 @@ import com.exam.fs.push.router.RouterTables;
 import com.exam.fs.push.utils.Config;
 import com.exam.fs.push.viewmodel.EditUserInfoViewModel;
 
+import cn.droidlover.xdroidbase.kit.AppUtils;
 import cn.droidlover.xdroidbase.kit.ToastManager;
 
 /**
@@ -44,6 +45,12 @@ public class SignSetActivity extends BaseActivity<ActivitySignSetBinding> {
                 sign = s.toString();
                 if (s.length() > 0) {
                     getBinding().titleView.getRightButton().setEnabled(true);
+                    getBinding().tvNum.setText(sign.length()<=50?(sign.length() + ""):"50");
+                    if(s.length() > 50){
+                        getBinding().etSign.setText(sign.substring(0,50));
+                        getBinding().etSign.setSelection(sign.length());
+                        ToastManager.showShort(context,String.format(AppUtils.getAppContext().getResources().getString(R.string.app_edit_group_notice_max_length_toast), 50));
+                    }
                 } else {
                     getBinding().titleView.getRightButton().setEnabled(false);
                 }

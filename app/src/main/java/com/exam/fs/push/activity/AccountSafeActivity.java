@@ -2,6 +2,7 @@ package com.exam.fs.push.activity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
@@ -12,6 +13,7 @@ import com.exam.fs.push.eventbus.EventBusBean;
 import com.exam.fs.push.model.UserModel;
 import com.exam.fs.push.router.RouterTables;
 import com.exam.fs.push.utils.Config;
+import com.exam.fs.push.utils.ToastUtils;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -32,6 +34,13 @@ public class AccountSafeActivity extends BaseActivity<ActivityAccountSafeBinding
         getBinding().btnUpdatePwd.setOnClickListener(view -> {
             ARouter.getInstance().build(RouterTables.PAGE_ACTIVITY_UPDATE_PWD).navigation();
         });
+
+        View.OnClickListener onClickListener = view ->{
+            ToastUtils.showShort(R.string.app_no_function);
+        };
+        getBinding().btnUrgentContacts.setOnClickListener(onClickListener);
+        getBinding().btnLoginManage.setOnClickListener(onClickListener);
+        getBinding().btnMoreSetting.setOnClickListener(onClickListener);
 
         UserModel userModel = Config.getUsers();
         if(userModel != null) {

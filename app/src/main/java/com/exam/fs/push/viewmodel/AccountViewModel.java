@@ -65,7 +65,7 @@ public class AccountViewModel extends BaseFragmentViewModel implements ViewModel
                 public void onNext(SimpleModel<UserModel> model) {
                     Context context = view.getContext();
                     Config.setUser(model.content);
-                    Log.e("EditUserInfoViewModel",new Gson().toJson(model));
+//                    Log.e("EditUserInfoViewModel",new Gson().toJson(model));
                     ToastManager.showShort(context, R.string.app_success);
 //                    BusFactory.getBus().post(new EventBusBean(EventBusBean.TAG_LOGIN_SUCCESS));
                     JMessageClient.login(model.content.username, model.content.password, new BasicCallback() {

@@ -68,4 +68,12 @@ public interface MankoService {
             @Field("checkNewPassword") String checkNewPassword
     );
 
+    @POST("/user/retrievePassword")
+    @FormUrlEncoded
+    Observable<SimpleModel<String>> retrievePassword(
+            @Field("phoneNumber") String phoneNumber,
+            @Field("password") String password,
+            @Field("verifyCode") String verifyCode
+    );
+
 }

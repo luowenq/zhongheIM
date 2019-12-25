@@ -10,6 +10,7 @@
     <string name="app_send_group">发起群聊</string>
     <string name="app_add_friendy">添加好友</string>
     <string name="app_saoyisao">扫一扫！</string>
+    <string name="app_saoyisao1">扫一扫</string>
     <string name="app_account">账号/手机号</string>
     <string name="app_pwd">请输入密码</string>
     <string name="app_phoneNumber">请输入11位有效的电话号码!</string>
@@ -164,7 +165,7 @@
     <string name="app_edit_sign">说点什么吧</string>
     <string name="app_sing_max_length">50</string>
     <string name="app_edit_group_notice_max_length">150</string>
-    <string name="app_edit_group_notice_max_length_toast">内容最大不能超过150个字符</string>
+    <string name="app_edit_group_notice_max_length_toast">内容最大不能超过%d个字符</string>
     <string name="app_receivables_payment">收付款</string>
     <string name="app_wallet">钱包</string>
     <string name="app_service">服务</string>
@@ -201,6 +202,12 @@
     <string name="app_from_file">从手机相册选择</string>
     <string name="app_words_content">文字内容</string>
     <string name="app_cancel">取消</string>
+    <string name="app_fabiao">发表</string>
+    <string name="app_now_idea">这一刻的想法...</string>
+    <string name="app_now_addr">所在位置</string>
+    <string name="app_tixing_shuikan">提醒谁看</string>
+    <string name="app_shuikeyikan">谁可以看</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

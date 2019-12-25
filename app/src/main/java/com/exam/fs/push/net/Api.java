@@ -9,8 +9,8 @@ import okhttp3.Interceptor;
 
 public class Api {
     private static MankoService mankoService;
-//    private static final String url = "http://192.168.0.130:8080/api/";
-//    public static final String imageUrl = "http://192.168.0.130:8080";
+//    private static final String url = "http://192.168.0.154:8082/api/";
+//    public static final String imageUrl = "http://192.168.0.154:8082";
 
     private static final String url = "http://45.13.161.218:8082/api/";
     public static final String imageUrl = "http://45.13.161.218:8082";

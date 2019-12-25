@@ -31,7 +31,10 @@
                 android:onClick="@{viewModel::editUserInfo}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <ImageView
+
+                <com.exam.fs.push.widget.CircleImageView
+                    app:baselib_corner_type="ALL"
+                    app:baselib_corner_radius="@dimen/len_4"
                     android:id="@+id/iv_photo"
                     android:layout_width="@dimen/len_60"
                     android:layout_height="@dimen/len_60"
@@ -42,7 +45,7 @@
                     android:contentDescription="@string/app_name"
                     android:onClick="@{viewModel::editUserInfo}"
                     android:scaleType="fitXY"
-                    android:src="@drawable/icon_head" />
+                    android:src="@drawable/icon_head"/>
 
                 <TextView
                     android:id="@+id/tv_nickname"

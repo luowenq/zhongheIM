@@ -39,6 +39,9 @@ public class SettingActivity extends BaseActivity<ActivitySettingBinding> {
         getBinding().btnChat.setOnClickListener(onClickListener);
         getBinding().btnPrivacy.setOnClickListener(onClickListener);
         getBinding().btnCurrency.setOnClickListener(onClickListener);
+        getBinding().btnAboutWind.setOnClickListener(onClickListener);
+        getBinding().btnHelp.setOnClickListener(onClickListener);
+        getBinding().btnPlugInUnit.setOnClickListener(onClickListener);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

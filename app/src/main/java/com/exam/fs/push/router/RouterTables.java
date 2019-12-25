@@ -81,4 +81,6 @@ public class RouterTables {
     public static final String PAGE_ACTIVITY_CHANGE_ACCOUNT = "/activity/change/account";
     //朋友圈
     public static final String PAGE_ACTIVITY_WECHAT_MOMENTS = "/activity/wechat/moments";
+    //发布朋友圈
+    public static final String PAGE_ACTIVITY_PUBLISH_WECHAT = "/activity/publish/wechat";
 }

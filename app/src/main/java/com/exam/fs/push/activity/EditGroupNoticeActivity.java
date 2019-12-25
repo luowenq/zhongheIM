@@ -11,6 +11,7 @@ import com.exam.fs.push.base.BaseActivity;
 import com.exam.fs.push.databinding.ActivityEditGroupNoticeBinding;
 import com.exam.fs.push.router.RouterTables;
 
+import cn.droidlover.xdroidbase.kit.AppUtils;
 import cn.droidlover.xdroidbase.kit.ToastManager;
 
 /**
@@ -40,7 +41,7 @@ public class EditGroupNoticeActivity extends BaseActivity<ActivityEditGroupNotic
                     if(content.length()>150){
                         getBinding().etContent.setText(content.substring(0,150));
                         getBinding().etContent.setSelection(content.length());
-                        ToastManager.showShort(context,R.string.app_edit_group_notice_max_length_toast);
+                        ToastManager.showShort(context,String.format(AppUtils.getAppContext().getResources().getString(R.string.app_edit_group_notice_max_length_toast), 150));
                     }
                     getBinding().titleView.getRightButton().setEnabled(true);
                 }else {

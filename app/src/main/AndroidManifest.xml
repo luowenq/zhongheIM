@@ -180,6 +180,9 @@
         <activity
             android:name=".activity.WechatMomentsActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.PublishWechatActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

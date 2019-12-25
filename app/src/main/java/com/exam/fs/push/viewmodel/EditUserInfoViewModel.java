@@ -1,7 +1,6 @@
 package com.exam.fs.push.viewmodel;
 
 import android.text.TextUtils;
-import android.util.Log;
 
 import androidx.databinding.ObservableField;
 
@@ -54,9 +53,7 @@ public class EditUserInfoViewModel extends BaseActivityViewModel implements View
             if (model.msg.equals("0")) {
                 urlImage = model.content.fileName;
             }
-            Log.e(TAG, "uploadImage: "+urlImage);
             updateUserInfo(urlImage,"","","","","","",false);
-//            return EditUserInfoModel.updateUserInfo(Config.getToken(),Config.getUsers().id,urlImage,"","","","","","","");
             return Observer::onComplete;
         }).compose(XApi.getObservableScheduler()).subscribe(uploadFileObserver);
     }

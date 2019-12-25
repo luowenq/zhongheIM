@@ -13,7 +13,9 @@
         android:paddingLeft="@dimen/len_14"
         android:paddingRight="@dimen/len_14"
         android:layout_height="wrap_content">
-        <ImageView
+        <com.exam.fs.push.widget.CircleImageView
+            app:baselib_corner_type="ALL"
+            app:baselib_corner_radius="@dimen/len_4"
             android:id="@+id/img_head"
             android:scaleType="fitXY"
             app:layout_constraintTop_toTopOf="parent"

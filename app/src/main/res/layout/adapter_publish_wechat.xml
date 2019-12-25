@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/dp122"
+        android:layout_height="@dimen/dp122">
+        <com.exam.fs.push.widget.CircleImageView
+            android:id="@+id/img_pic"
+            android:layout_marginTop="@dimen/len_10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:baselib_corner_type="ALL"
+            app:baselib_corner_radius="@dimen/len_4"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:id="@+id/iv_del"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/len_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingBottom="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_delete_menu"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_duration"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/picture_icon_shadow_bg"
+            android:drawableLeft="@drawable/picture_icon_video"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingTop="8dp"
+            android:text="00:00"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:visibility="gone"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

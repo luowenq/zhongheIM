@@ -48,6 +48,11 @@ public class UpdatePwdViewModel extends BaseFragmentViewModel implements ViewMod
             return;
         }
 
+        if(!newPassword.equals(checkNewPassword)){
+            ToastManager.showShort(AppUtils.getAppContext(), R.string.app_pwd_noway);
+            return;
+        }
+
         simpleObserver = new SimpleObserver<SimpleModel<String>>() {
             @Override
             public void onNext(SimpleModel<String> uploadFileBeanSimpleModel) {

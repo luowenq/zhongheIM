@@ -51,15 +51,17 @@
                             tools:ignore="ContentDescription" />
                     </RelativeLayout>
 
-                    <ImageView
+                    <com.exam.fs.push.widget.CircleImageView
                         android:id="@+id/iv_header"
+                        android:scaleType="centerCrop"
+                        app:baselib_corner_type="ALL"
+                        app:baselib_corner_radius="@dimen/len_4"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginTop="@dimen/dp132"
                         android:layout_marginStart="@dimen/len_16"
                         android:layout_width="@dimen/len_60"
-                        android:layout_height="@dimen/len_60"
-                        tools:ignore="ContentDescription" />
+                        android:layout_height="@dimen/len_60"/>
                     <TextView
                         android:id="@+id/tv_nickname"
                         app:layout_constraintLeft_toRightOf="@+id/iv_header"
